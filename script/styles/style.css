@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/* variables */
+/* fonts */
+@font-face {
+  font-family: "Vazir";
+  src: url("../font/Vazir.eot?#") format("eot"), url("../font/Vazir.woff") format("woff"), url("../font/Vazir.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+body{
+    padding: 50px 20%;
+    font-family: "Vazir";
+}
+.head{
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.body{
+    padding: 5px;
+    border: 1px solid;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.head p{
+    font-size: 10pt;
+}
+.head .date{
+    font-size: 9pt;
+}
+.body h5{
+    padding: 8px 0;
+}
+input{
+    width: 100px;
+}
