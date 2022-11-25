@@ -9,7 +9,7 @@
     --blue: #1e23bf;
     --gray: #6c757d;
 }
-/* fonts */
+/* fonts  */
 @font-face {
     font-family: "Vazir";
     src: url("font/Vazir.eot?#") format("eot"), url("font/Vazir.woff") format("woff"), url("font/Vazir.ttf") format("truetype");
