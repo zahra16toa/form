@@ -1,0 +1,135 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="form-title">
+        <p class="big-form-title">فرم کارآموزی</p>
+    </div>
+    <form action="form.html" method="post" class="register-form">
+        <div class="input-box">
+            <input type="text" name="" class="text-input" id="" required>
+            <label class="input-label" for="name">(الزامی)نام</label>
+        </div>
+        <div class="input-box">
+            <input type="text" name="" class="text-input" id="" required>
+            <label class="input-label" for="l-name">(الزامی)نام خانوادگی</label>
+        </div>
+        <div class="input-box">
+            <input type="text" maxlength="9" class="text-input" required>
+            <label class="input-label" for="student-id">(الزامی)شماره دانشجویی</label>
+        </div>
+        <div class="select-group">
+            <fieldset>
+              <legend>مقطع</legend>
+              <p class="grade"></p>
+              <div class="grade-div">
+                  <div>
+                      <span class="radio-span">
+                          <label class="radio-label karshenasi" for="karshenasi">کارشناسی
+                              <input type="radio" name="maqta" class="radio" required id="karshenasi" value="کارشناسی " checked/>
+                            </label>
+                        </span>
+                        <span class="radio-span">
+                            <label class="radio-label kardani" for="kardani">کاردانی
+                                <input type="radio" name="maqta" class="radio" required id="kardani" value="کاردانی" />
+                            </label>
+                        </span>
+                    </div>
+                    <div>
+                        <span class="radio-span">
+                          <label class="radio-label peyvaste" for="peyvaste">پیوسته
+                              <input type="radio" name="maqta1" class="radio" required id="peyvaste" value="پیوسته " checked/>
+                          </label>
+                        </span>
+                        <span class="radio-span">
+                          <label class="radio-label napeyvaste" for="naPeyvaste">ناپیوسته
+                              <input type="radio" name="maqta1" class="radio" required id="naPeyvaste" value="ناپیوسته" />
+                          </label>
+                        </span>
+                    </div>
+              </div>
+              </fieldset>
+
+
+            <fieldset class="branch">
+                <legend>رشته</legend>
+                <select name="" id="reshte"></select>
+               
+
+                    <div class="learningWork">
+                        <select name="" id="Lw" style="padding-right: 45px">
+                        </select>
+                        <label class="learning-work-label" for="">کارآموزی:</label>
+                    </div>
+                   
+        
+           
+            </fieldset>
+        </div>
+        
+    <span class="input-form">
+            <div class="input-box">
+                <input type="text" maxlength="4" class="text-input min-input" name="" id="" required>
+                <label class="input-label" for="">ورودی</label>
+            </div>
+            <div class="input-box">
+                <input type="text" class="text-input min-input" name="" id="" required>
+                <label class="input-label" for="">نام پدر</label>
+            </div>
+            <div class="input-box">
+                <input type="text" class="text-input min-input" name="" id="" required>
+                <label class="input-label" for="">صادره از</label>
+            </div>
+            <div class="input-box">
+                <input type="text" maxlength="4" class="text-input min-input" name="" id="" required>
+                <label class="input-label" for="">متولد</label>
+            </div>
+    </span>
+    <span class="input-form">
+        <div class="input-box">
+            <input type="text" style="width: 98%;" class="text-input min-input" name="" id="unit" readonly>
+            <label id="unitLabel" class="input-label" for="">تعداد واحد</label>
+        </div>
+        <div class="input-box">
+            <input type="text" class="text-input min-input" name="" id="hour" readonly>
+            <label id="hourLabel" class="input-label" for="">تعداد ساعت</label>
+        </div>
+        <div class="input-box">
+            <input type="text" class="text-input min-input" maxlength="11" name="" id="" required >
+            <label class="input-label tel" for="">شماره تماس دانشجو</label>
+        </div>
+    </span>
+    <span class="input-form">
+        <div class="input-box">
+            <input type="text" maxlength="10" style="width: 99%;" class="text-input min-input" name="" id="" required>
+            <label class="input-label" for="">شماره شناسنامه</label>
+        </div>
+        <div class="input-box">
+            <input type="text" class="text-input min-input" name="" id="" required>
+            <label class="input-label" for="">نام استاد</label>
+        </div>
+    </span>
+    <span class="input-form">
+        <div class="input-box">
+            <input type="text" class="text-input min-input" style="width: 99.5%;" name="" id="" required>
+            <label class="input-label" for=""> نام شرکت / کارخانه / موسسه / اداره / بانک / سازمان</label>
+        </div>
+    </span>
+    <span class="input-form">
+        <div class="input-box">
+            <input type="text" class="text-input min-input" style="width: 99.5%; height: 40px" name="" id="" required>
+            <label class="input-label" for="">نشانی</label>
+        </div>
+    </span>
+        <button type="submit">ایجاد فرم</button>
+
+    </form>
+    <script src="script/script.js"></script>
+    <!-- <script src="script/farsiType.js"></script> -->
+</body>
+</html>

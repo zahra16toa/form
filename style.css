@@ -1,0 +1,358 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+    font-family: "Vazir";
+}
+:root{
+    --yellow: #f7ba11;
+    --blue: #1e23bf;
+    --gray: #6c757d;
+}
+/* fonts */
+@font-face {
+    font-family: "Vazir";
+    src: url("font/Vazir.eot?#") format("eot"), url("font/Vazir.woff") format("woff"), url("font/Vazir.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+/* main tags */
+body{
+    background-image: url(img/background\ \(2\).jpg);
+}
+.option{
+    background-color: #fff;
+    border: 1px solid var(--blue);
+}
+.option:hover{
+    background: var(--gray);
+}
+.karshenasi,
+.kardani{
+    visibility: hidden;
+}
+
+.form-title{
+    width: 100%;
+    height: auto;
+    color: #fff;
+    padding: 48PX 45%;
+    background-color: var(--blue);
+}
+.register-form{
+    background: #fff;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:flex-end;
+    padding: 50px;
+    margin: 0 25%;
+    box-shadow: 0 4px 3px 3px #ddd;
+}
+label{
+    color: var(--gray);
+}
+form div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items:flex-end;
+    margin-bottom: 15px;
+}
+.select-group{
+    display: flex;
+    flex-direction: row;
+    text-align: right;
+}
+.select-group:nth-child(1){
+    position: relative;
+}
+fieldset{
+    height: 120px;
+    padding: 3%;
+    width: 50%;
+    text-align: right;
+    direction: rtl;
+    display: flex;  
+}
+.branch{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+fieldset legend{
+    padding: 0 5px;
+    /* color: var(--gray); */
+}
+fieldset div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+.learning-work-label{
+    position: absolute;
+    right: 5;
+    font-size: 12;
+    pointer-events: none;
+}
+.grade-div{
+    display: flex;
+    flex-direction: row;
+}
+select {
+	width: 165px;
+	text-align: right;
+	direction: rtl;
+	height: 25px;
+	background: #fff;
+	border: 1px solid var(--gray);
+	color: var(--gray);
+	cursor: pointer;
+    font-size: 10pt;
+    margin: 0;
+}
+select:focus{
+    border: 1px solid var(--blue);
+}
+select option{
+    border: 1px solid var(--blue);
+}
+.text-input{
+    width: 100%;
+    height: 32px;
+    width: 100%;
+    height: 32px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid var(--gray);
+    padding: 0 8px;
+    text-align: right;
+}
+button{
+    width: 80px;
+    height: 47px;
+    border-radius: 4px;
+    background: var(--yellow);
+    color: #fff;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 40%;
+}
+button:hover{
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    box-shadow: 0px 3px 7px var(--gray);
+    color:var(--blue);
+}
+
+.learningWork{
+    visibility: hidden;
+    position: relative;
+    top: 10;
+}
+.peyvaste,
+.napeyvaste,
+.radio{
+    visibility: hidden;
+}
+.show{
+    visibility: visible;
+}
+.hide{
+    visibility: hidden;
+}
+.min-input{
+    width: 97%;
+}
+.grade{
+    position: absolute;
+}
+.input-form{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.input-box{
+    position: relative;
+}
+
+.input-label{
+    position: absolute;
+    margin-right: 10px;
+    font-size: .8em;
+    transform: translateY(0);
+    transition: .3s;
+    cursor: text;
+    pointer-events: none;
+}
+
+.input-label:focus ~ .text-input{
+    border: 1px solid var(--blue);
+}
+.min-input:focus ~ .input-label,
+.input-label:focus,
+.text-input:focus ~ .input-label,
+.text-input:valid ~ .input-label{
+    color: var(--gray);
+    transform: translateY(-18px);
+    font-size: .65em;
+    padding: 0 5px;
+    background: #fff;
+    border-left: 1px solid var(--yellow);
+    border-right: 1px solid var(--yellow);
+}
+.text-input:valid,
+.text-input:focus{
+    border: 1px solid var(--blue);
+}
+/* .input-form label:active{
+    transform: translateY(-15px);
+    background: #fff;
+} */
+.label{
+    /* transform: translateY(-15px); */
+    /* background: #fff; */
+    padding: 0 3px;
+}
+#unitLabel,
+#hourLabel{
+    transform: translateY(-19px);
+    background: #fff;
+    padding: 0 3px;
+}
+/* radio button styles */
+input[type="radio"]{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #fff;
+    margin: 0 7px;
+    font:inherit;
+    width: 18px;
+    height: 19px;
+    border: 0.15em solid var(--gray);
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+}
+input[type="radio"]::before{
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--yellow);
+}
+input[type="radio"]:checked::before{
+    transform: scale(1);
+}
+.radio-span label{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    direction: ltr;
+    font-size: 11pt;
+}
+
+
+/* media queries */
+@media (max-width: 700px) {
+    .form-title{
+        padding: 10% 40%;
+    }
+    .register-form{
+        margin: 0;
+        width: 100%;
+    }
+    .learning-work-label{
+        right: 25;
+    }
+    label{
+        font-size: 10pt;
+    }
+    fieldset{
+        padding: 0 3px;
+    }
+    select{
+        width: 122px;
+        margin: 0 20px;
+        font-size: 10;
+    }
+    
+    .radio-span label{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        font-size: 10pt;
+    }
+    input[type="radio"]{
+        width: 15px;
+        height: 15px;
+        margin: 0 5px;
+    }
+    input[type="radio"]::before{
+        width: 7px;
+        height: 7px;
+    }
+    .input-label{
+        font-size: .7em;
+    }
+}
+@media (max-width: 420px){
+    button{
+        margin-right: 30%;
+    }
+    select{
+        width: 135px;
+        margin: 14px 22px;
+    }
+
+    div.form-title{
+        padding: 10% 32%;
+    }
+    .register-form{
+        margin: 0;
+        width: 100%;
+        padding: 20PX;
+    }
+    .select-group{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .select-group fieldset{
+        width: 100%;
+        height: 100%;
+        padding: 5px 10px;
+    }
+    .input-label fieldset{
+        margin-right: 1px;
+    }
+    .input-label{
+        margin-right: 5px;
+    }
+    .text-input:focus ~ .input-label,
+    .text-input:valid ~ .input-label{
+        font-size: .5em;
+        padding: 0 3px;
+    }
+    .learning-work-label{
+        right: 28;
+    }
+    fieldset label{
+        font-size: 12pt;
+
+    }
+    .tel{
+        font-size: 6pt;
+    }
+} 
