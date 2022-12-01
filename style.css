@@ -145,7 +145,7 @@ button{
     outline: none;
     border: none;
     cursor: pointer;
-    margin-right: 40%;
+    margin: 10px 40%;
 }
 button:hover{
     -webkit-transform: translateY(-5px);
@@ -226,7 +226,8 @@ button:hover{
     padding: 0 3px;
 }
 #unitLabel,
-#hourLabel{
+#hourLabel,
+#year{
     transform: translateY(-19px);
     background: #fff;
     font-size: .63em;

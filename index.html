@@ -101,7 +101,7 @@
     </span>
     <span class="input-form">
         <div class="input-box">
-            <input type="text" maxlength="10" class="text-input min-input" name="" id="" required>
+            <input type="text" maxlength="10" style="width: 99.5%" class="text-input min-input" name="" id="" required>
             <label class="input-label" for="">شماره شناسنامه</label>
         </div>
         <div class="input-box">
@@ -110,7 +110,11 @@
         </div>
     </span>
     <span class="input-form">
-       
+        <div class="input-box">
+            <label class="input-label" id="year" for="">نیمسال کارآموزی</label>
+            <select class="term" name="" id=""><option value="بهمن 4002">بهمن 4002</option>
+                <option value="بهمن 4002">تابستان 4002</option></select>
+        </div>
         <div class="input-box">
             <input type="text" class="text-input min-input"name="" id="" required>
             <label class="input-label" for="">نام استاد</label>
@@ -137,6 +141,18 @@
             <input type="text" class="text-input min-input" style="width: 99.5%; height: 40px" name="" id="" required>
             <label class="input-label" for="">نشانی</label>
         </div>
+    </span>
+    <span class="input-form">
+        <label for="more"> سایر
+            <input type="checkbox" name="" id="more">
+        </label>
+        <label for="industrial"> صنعتی
+            <input type="checkbox" name="" id="industrial">
+        </label>
+        <label for="service"> خدماتی
+            <input type="checkbox" name="" id="service">
+        </label>
+        <label for="">نوع محل کارآموزی</label>
     </span>
         <button type="submit">ایجاد فرم</button>
 
