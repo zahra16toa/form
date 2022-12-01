@@ -71,12 +71,17 @@ form div{
     position: relative;
 }
 fieldset{
-    height: 120px;
+    height: 180px;
     padding: 3%;
     width: 50%;
     text-align: right;
     direction: rtl;
     display: flex;  
+}
+.count-of-hour-unit{
+    display: flex;
+    flex-direction: row;
+    padding-top: 10px;
 }
 .branch{
     display: flex;
@@ -224,6 +229,7 @@ button:hover{
 #hourLabel{
     transform: translateY(-19px);
     background: #fff;
+    font-size: .63em;
     padding: 0 3px;
 }
 /* radio button styles */
@@ -237,7 +243,7 @@ input[type="radio"]{
     background: #fff;
     margin: 0 7px;
     font:inherit;
-    width: 18px;
+    width: 19px;
     height: 19px;
     border: 0.15em solid var(--gray);
     border-radius: 50%;
