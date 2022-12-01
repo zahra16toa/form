@@ -37,7 +37,7 @@ body{
     width: 100%;
     height: auto;
     color: #fff;
-    padding: 48PX 45%;
+    padding: 48PX 44%;
     background-color: var(--blue);
 }
 .register-form{
@@ -122,9 +122,6 @@ select {
 select:focus{
     border: 1px solid var(--blue);
 }
-select option{
-    border: 1px solid var(--blue);
-}
 .text-input{
     width: 100%;
     height: 32px;
@@ -175,6 +172,7 @@ button:hover{
 }
 .grade{
     position: absolute;
+    padding: 20px;
 }
 .input-form{
     width: 100%;
@@ -284,15 +282,18 @@ input[type="radio"]:checked::before{
     .learning-work-label{
         right: 25;
     }
+    .count-of-hour-unit{
+        display: flex;
+        gap: 5px;
+    }
     label{
         font-size: 10pt;
     }
     fieldset{
-        padding: 0 3px;
+        padding: 15px 15px 0;
     }
     select{
-        width: 122px;
-        margin: 0 20px;
+        width: 100%;
         font-size: 10;
     }
     
@@ -300,7 +301,7 @@ input[type="radio"]:checked::before{
         width: 100%;
         display: flex;
         justify-content: center;
-        font-size: 10pt;
+        /* font-size: 10pt; */
     }
     input[type="radio"]{
         width: 15px;
@@ -320,12 +321,11 @@ input[type="radio"]:checked::before{
         margin-right: 30%;
     }
     select{
-        width: 135px;
-        margin: 14px 22px;
+        width: 100%;
     }
 
     div.form-title{
-        padding: 10% 32%;
+        padding: 10% 39%;
     }
     .register-form{
         margin: 0;
@@ -339,7 +339,7 @@ input[type="radio"]:checked::before{
     .select-group fieldset{
         width: 100%;
         height: 100%;
-        padding: 5px 10px;
+        padding: 10px 15px;
     }
     .input-label fieldset{
         margin-right: 1px;
