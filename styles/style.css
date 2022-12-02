@@ -12,7 +12,7 @@
   font-style: normal;
 }
 body{
-    padding: 50px 20%;
+    padding: 50px 25%;
     font-family: "Vazir";
     direction: rtl;
 }
@@ -37,6 +37,9 @@ body{
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-between;
+}
+strong{
+    margin: 0 10px;
 }
 .head p{
     font-size: 10pt;
