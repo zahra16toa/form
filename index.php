@@ -7,27 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-<?php
-// define variables and set to empty values
-$fName = $lName = $stuId = $hourCount = $professor = $branch = $grade = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $fName = test_input($_POST["fName"]);
-  $lName = test_input($_POST["lName"]);
-  $stuId = test_input($_POST["studentId"]);
-  $houtCount = test_input($_POST["hour"]);
-  $professor = test_input($_POST["professorName"]);
-  $branch = test_input($_POST["branch"]);
-  $grade = test_input($_POST["grade"]) . test_input($_POST["grade1"]);
-}
-
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
-?>
     <div class="form-title">
         <p class="big-form-title">فرم کارآموزی</p>
     </div>
