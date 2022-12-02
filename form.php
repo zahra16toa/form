@@ -19,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $professor = $_POST["professorName"];
   $branch = $_POST["branch"];
   $grade = ($_POST["grade"] . $_POST["grade1"]);
+  $comName = $_POST["companyName"];
 }
 
 // function test_input($data) {
@@ -43,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p>دفتر ارتباط با صنعت</p>
     </div>
     <div class="body">
-        <h5>به: <span id="company"></span></h5>
+        <h5>به: <span><?php echo($comName); ?></span></h5>
         <h5>از: دفتر ارتباط با صنعت دانشگاه آزاد اسلامی</h5>
         <h5>موضوع: کارآموزی</h5>
         <h5>سلام علیکم</h5> <br> <br>

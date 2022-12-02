@@ -14,6 +14,7 @@
 body{
     padding: 50px 20%;
     font-family: "Vazir";
+    direction: rtl;
 }
 .head{
     padding: 20px;
@@ -34,7 +35,7 @@ body{
     height: auto;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: space-between;
 }
 .head p{
