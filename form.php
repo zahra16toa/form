@@ -9,24 +9,24 @@
 <body>
 <?php
 // define variables and set to empty values
-$fName = $lName = $stuId = $hourCount = $professor = $branch = $grade = "";
+$name = $lName = $stuId = $hourCount = $professor = $branch = $grade = $comName = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $fName = test_input($_POST["fName"]);
-  $lName = test_input($_POST["lName"]);
-  $stuId = test_input($_POST["studentId"]);
-  $houtCount = test_input($_POST["hour"]);
-  $professor = test_input($_POST["professorName"]);
-  $branch = test_input($_POST["branch"]);
-  $grade = test_input($_POST["grade"]) . test_input($_POST["grade1"]);
+  $name = ($_POST["fName"] . $_POST["lName"]);
+  $lName = $_POST["lName"];
+  $stuId = $_POST["studentId"];
+  $hourCount = $_POST["hour"];
+  $professor = $_POST["professorName"];
+  $branch = $_POST["branch"];
+  $grade = ($_POST["grade"] . $_POST["grade1"]);
 }
 
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
+// function test_input($data) {
+//   $data = trim($data);
+//   $data = stripslashes($data);
+//   $data = htmlspecialchars($data);
+//   return $data;
+// }
 ?>
     <div class="head">
         <div class="date">
@@ -48,7 +48,7 @@ function test_input($data) {
         <h5>موضوع: کارآموزی</h5>
         <h5>سلام علیکم</h5> <br> <br>
         <div>
-            <span>بدینوسیله 
+            <span>بدینوسیله <?php echo($name); ?> </span> دانشجوی <span><?php echo($grade); echo($grade1);?></span>
                 <span> رشته 
             <span>را جهت گذراندن یک دوره کارآموزی به مدت  ساعت معرفی می نمائید. </span>
                 <p>ضمنا استاد کارآموزی ایشان دکتر می باشد. 
