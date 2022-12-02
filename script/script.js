@@ -18,6 +18,11 @@ const kardaniLabel = document.querySelector(".kardani");
 const gradeParagraph = document.querySelector(".grade");
 const gradeDiv = document.querySelector(".grade-div");
 const radioSpan = document.querySelectorAll(".radio-span");
+const companyName = document.querySelector("#companyName");
+
+
+/* form variables */
+const company = document.querySelector("#company")
 /* objects */
 const reshteha = [
     {text: "مهندسی تکنولوژی نرم افزار", value: "مهندسی تکنولوژی نرم افزار", hour: "360"},
@@ -329,6 +334,7 @@ function addOption1(){
     )
 }
 
+
 function removeOptions(){
     nums.forEach(option =>
         Lw.remove(new Option(option.text , option.value, option.selected)))
@@ -409,3 +415,7 @@ karshenasi.addEventListener("click", ()=>{
 // });
 /* main */
 fillSelect();
+
+/* main codes */
+console.log()
+company.textContent = companyName.value;
