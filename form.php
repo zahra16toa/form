@@ -44,7 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p>دفتر ارتباط با صنعت</p>
     </div>
     <div class="body">
-        <h5>به: <span><?php echo($comName); ?></span></h5>
+        <h5>به شرکت / کارخانه / موسسه / اداره / بانک / سازمان: <span><?php echo($comName); ?></span></h5>
         <h5>از: دفتر ارتباط با صنعت دانشگاه آزاد اسلامی</h5>
         <h5>موضوع: کارآموزی</h5>
         <h5>سلام علیکم</h5> <br> <br>
