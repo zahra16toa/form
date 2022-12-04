@@ -35,7 +35,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p> :شماره نامه</p>
         </div>
         <div class="logo">
-            <img src="" alt="">
+            <img src="img/download1.png" width="45px" alt="">
         </div>
         <div class="text">
             <h5>باسمه تعالی</h5>
