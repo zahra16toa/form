@@ -12,22 +12,22 @@
 $name = $lName = $stuId = $hourCount = $professor = $branch = $grade = $comName = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = ($_POST["fName"] . $_POST["lName"]);
-  $lName = $_POST["lName"];
-  $stuId = $_POST["studentId"];
-  $hourCount = $_POST["hour"];
-  $professor = $_POST["professorName"];
-  $branch = $_POST["branch"];
-  $grade = ($_POST["grade"] . $_POST["grade1"]);
-  $comName = $_POST["companyName"];
+  $name = test_input($_POST["fName"] . $_POST["lName"]);
+  $lName = test_input($_POST["lName"]);
+  $stuId = test_input($_POST["studentId"]);
+  $hourCount = test_input($_POST["hour"]);
+  $professor = test_input($_POST["professorName"]);
+  $branch = test_input($_POST["branch"]);
+  $grade = test_input($_POST["grade"] . $_POST["grade1"]);
+  $comName = test_input($_POST["companyName"]);
 }
 
-// function test_input($data) {
-//   $data = trim($data);
-//   $data = stripslashes($data);
-//   $data = htmlspecialchars($data);
-//   return $data;
-// }
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
 ?>
     <div class="head">
         <div class="date">
