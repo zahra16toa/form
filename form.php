@@ -66,6 +66,10 @@ function test_input($data) {
         </div>
        
     </div>
+    <div class="tag">
+        <p>دکتر امیر فتاح</p>
+        <p>مدیر ارتباط با صنعت</p>
+    </div>
     <script src="script/script.js"></script>
 </body>
 </html>

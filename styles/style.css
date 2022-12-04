@@ -53,3 +53,11 @@ strong{
 input{
     width: 100px;
 }
+.tag{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    margin: 70px 50%;
+    direction: ltr;
+}
