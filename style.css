@@ -73,14 +73,15 @@ form div{
 fieldset{
     height: 180px;
     padding: 3%;
-    width: 50%;
+    width: 100%;
     text-align: right;
     direction: rtl;
-    display: flex;  
+    display: flex; 
+    position: relative;
 }
 .count-of-hour-unit{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding-top: 10px;
 }
 .branch{
@@ -102,10 +103,16 @@ fieldset div{
     right: 5;
     font-size: 12;
     pointer-events: none;
+    z-index: 1;
 }
 .grade-div{
     display: flex;
     flex-direction: column;
+    position: relative; 
+
+}
+.radio-span{
+    width: 50%;
 }
 select {
 	width: 100%;
@@ -118,6 +125,7 @@ select {
 	cursor: pointer;
     font-size: 10pt;
     margin: 0;
+    z-index: 1;
 }
 select:focus{
     border: 1px solid var(--blue);
@@ -171,8 +179,13 @@ button:hover{
     width: 99%;
 }
 .grade{
+    display: flex;
+    align-items: center;
     position: absolute;
-    padding: 20px;
+    width: 90%;
+    justify-content: center;
+    top: 27px;
+    left: 61px;
 }
 .input-form{
     width: 100%;

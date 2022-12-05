@@ -175,32 +175,13 @@ function conditions(){
 
         } else 
         /* کارشناسی و کاردانی پیوسته و ناپیوسته */
+        /* حسابداری */
         if(reshteSelect.value == reshteha[9].text){
             karshenasi.classList.add("show");
-            kardaniLabel.classList.add("show");
-            karshenasiLabel.classList.add("show");
             learningWork.classList.add("hide");
             
             kardani.classList.add("show");
-            karshenasi.addEventListener("click",()=>{
-                if(reshteSelect.value == reshteha[9].text){
-                    
-                    napeyvasteLabel.classList.add("show");
-                naPeyvaste.classList.add("show");
-                peyvaste.classList.remove("show");
-                peyvasteLabel.classList.remove("show");
-            }
-        })
-        
-        kardani.addEventListener("click",()=>{
-            if(reshteSelect.value == reshteha[9].text){
-            peyvaste.classList.add("show");
-            peyvasteLabel.classList.add("show");
-            naPeyvaste.classList.remove("show");
-            napeyvasteLabel.classList.remove("show");
-            }
-        })
-        gradeParagraph.classList.add("hide");
+            gradeParagraph.classList.add("hide");
         } else 
         /* کاردانی ناپیوسته و کارشناسی پیوسته و ناپیوسته */
         if(reshteSelect.value == reshteha[15].text){
@@ -264,7 +245,7 @@ function conditions(){
             peyvasteLabel.classList.remove("show");
             napeyvasteLabel.classList.remove("show");
             gradeDiv.classList.add("hide");
-
+            
             gradeParagraph.classList.remove("hide");
             learningWork.classList.add("show");
             gradeParagraph.innerHTML = "کارشناسی پیوسته";
@@ -416,6 +397,3 @@ karshenasi.addEventListener("click", ()=>{
 /* main */
 fillSelect();
 
-/* main codes */
-console.log()
-company.textContent = companyName.value;

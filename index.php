@@ -27,8 +27,23 @@
         <div class="select-group">
             <fieldset>
               <legend>مقطع</legend>
-              <p class="grade"></p>
-              <div class="grade-div">
+              
+              <!-- </fieldset>
+
+
+            <fieldset class="branch">
+                <legend>رشته</legend> -->
+                <div>
+                <select name="branch" id="reshte"></select>
+                    <div class="learningWork">
+                        <select name="learningWork" id="Lw" style="padding-right: 45px"></select>
+                        <label class="learning-work-label" for="">کارآموزی:</label>
+                    </div>
+                </div>
+                
+                <p class="grade"></p>
+                <div class="grade-div">
+
                   <div>
                       <span class="radio-span">
                           <label class="radio-label karshenasi" for="karshenasi">کارشناسی
@@ -54,19 +69,6 @@
                         </span>
                     </div>
               </div>
-              </fieldset>
-
-
-            <fieldset class="branch">
-                <legend>رشته</legend>
-                <select name="branch" id="reshte"></select>
-               
-
-                    <div class="learningWork">
-                        <select name="learningWork" id="Lw" style="padding-right: 45px">
-                        </select>
-                        <label class="learning-work-label" for="">کارآموزی:</label>
-                    </div>
                    <div class="count-of-hour-unit">
                     <div class="input-box">
                         <input type="text" class="text-input min-input" name="unit" id="unit" readonly>
