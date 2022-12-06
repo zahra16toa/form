@@ -25,7 +25,7 @@ const karshenasiNaPeyvasteRadio = document.querySelector("#karshenasiNapeyvaste"
 const kardaniPeyvasteRadio = document.querySelector("#kardaniPeyvaste");
 const kardaniNapeyvaste = document.querySelector(".kardani-napeyvaste");
 const kardaniNapeyvasteRadio = document.querySelector("#kardaniNapeyvaste");
-
+const sudentId = document.querySelector("#studentId");
 /* form variables */
 const company = document.querySelector("#company")
 /* objects */
@@ -480,4 +480,9 @@ karshenasi.addEventListener("click", ()=>{
 // });
 /* main */
 fillSelect();
-
+// sudentId.attributes.add("onkeypress","return inNumberKey(event)");
+$(document).ready(function(){
+    $("#studentId").inputFilter(function(value){
+        return /^\d*$/.test(value);
+    },"Only digits allowed");
+});

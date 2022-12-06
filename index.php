@@ -21,8 +21,8 @@
             <label class="input-label" for="l-name">(الزامی)نام خانوادگی</label>
         </div>
         <div class="input-box">
-            <input type="text" name="studentId" maxlength="9" class="text-input" required>
-            <label class="input-label" for="student-id">(الزامی)شماره دانشجویی</label>
+            <input type="text" name="studentId" maxlength="9" class="text-input" id="studentId" required>
+            <label class="input-label"  for="student-id">(الزامی)شماره دانشجویی</label>
         </div>
         <div class="select-group">
             <fieldset>
@@ -180,6 +180,7 @@
 
     </form>
     <script src="script/script.js"></script>
+  
     <!-- <script src="script/farsiType.js"></script> -->
 </body>
 </html>
