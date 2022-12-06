@@ -172,8 +172,9 @@ function conditions(){
 
         } else
         /* کارشناسی ناپیوسته و پیوسته */
+        /* مهندسی عمران */
         if(reshteSelect.value == reshteha[4].text){
-            gradeParagraph.classList.add("show");
+            gradeParagraph.classList.remove("hide");
             learningWork.classList.add("hide");
 
             gradeParagraph.innerHTML = "کارشناسی";
@@ -242,6 +243,8 @@ function conditions(){
             kardaniPeyvasteRadio.classList.remove("show");
             kardaniNapeyvaste.classList.add("show");
             kardaniNapeyvasteRadio.classList.add("show");
+            kardaniNapeyvasteRadio.style.zIndex = 1;
+            kardaniNapeyvaste.style.zIndex = 1;
             kardaniNapeyvaste.addEventListener("click",()=>{
                 naPeyvaste.classList.remove("show");
                 napeyvasteLabel.classList.remove("show");
@@ -291,7 +294,9 @@ function conditions(){
             })
             gradeParagraph.classList.remove("hide");
             gradeParagraph.innerHTML = "کارشناسی پیوسته";
-        } else if(reshteSelect.value == reshteha[10].text){
+        } else 
+        /* مهندسی صنایع غذایی */
+        if(reshteSelect.value == reshteha[10].text){
             peyvaste.classList.remove("show");
             naPeyvaste.classList.remove("show");
             kardani.classList.remove("show");
@@ -313,8 +318,7 @@ function conditions(){
             learningWork.classList.remove("hide");
             removeOptions();
             addOption1();
-           
-        } 
+        }   
         /* تعداد ساعت */
         /* 360 */
         if(reshteSelect.value == reshteha[0].text || reshteSelect.value == reshteha[1].text ||
@@ -326,7 +330,7 @@ function conditions(){
             reshteSelect.value == reshteha[6].text || reshteSelect.value == reshteha[8].text ||
             reshteSelect.value == reshteha[13].text || reshteSelect.vale == reshteha[14].text ||
             reshteSelect.value == reshteha[16].text || reshteSelect.value == reshteha[7].text ||
-            reshteSelect.value == reshteha[18].text ){
+            reshteSelect.value == reshteha[18].text || reshteSelect.value == reshteha[15].text){
             hour.value = reshteha[3].hour;
         } else
         /* 120 */
@@ -351,7 +355,7 @@ function conditions(){
         if(reshteSelect.value == reshteha[3].text || reshteSelect.value == reshteha[5].value ||
             reshteSelect.value == reshteha[6].text || reshteSelect.value == reshteha[7].text || reshteSelect.value == reshteha[12].text ||
             reshteSelect.value == reshteha[13].text || reshteSelect.value == reshteha[14].text ||
-            reshteSelect.value == reshteha[16].text || reshteSelect.value == reshteha[18].text){
+            reshteSelect.value == reshteha[16].text || reshteSelect.value == reshteha[18].text || reshteSelect.value == reshteha[15].text){
                 unit.value = 2;
             } else
         /* 3 واحد */
@@ -410,7 +414,7 @@ karshenasiNaPeyvaste.addEventListener("click",()=>{
     if(reshteSelect.value == reshteha[9].text){
         hour.value = 360;
         unit.value = 3;
-    }
+    } 
 })
 karshenasi.addEventListener("click", ()=>{
     /* حسابداری */

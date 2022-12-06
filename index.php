@@ -46,7 +46,7 @@
 
                   <div>
                       <span class="radio-span">
-                          <label class="radio-label karshenasi" for="karshenasi">کارشناسی
+                          <label class="radio-label karshenasi" for="karshenasi">کارشناسی 
                               <input type="radio" name="grade" class="radio" required id="karshenasi" value="کارشناسی " checked/>
                             </label>
                         </span>
@@ -77,7 +77,7 @@
                     </div>
                     <div>
                         <span class="radio-span">
-                          <label class="radio-label peyvaste" for="peyvaste">پیوسته
+                          <label class="radio-label peyvaste" for="peyvaste"> پیوسته
                               <input type="radio" name="grade1" class="radio" required id="peyvaste" value="پیوسته " checked/>
                           </label>
                         </span>
