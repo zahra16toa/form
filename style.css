@@ -291,7 +291,10 @@ input[type="radio"]:checked::before{
     direction: ltr;
     font-size: 12pt;
 }
-
+ form > span:nth-child(11) > label,
+ input[type="checkbox"]{
+    cursor: pointer;
+ }
 
 /* media queries */
 @media (max-width: 700px) {
