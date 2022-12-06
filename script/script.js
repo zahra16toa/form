@@ -365,7 +365,8 @@ function conditions(){
         if(reshteSelect.value == reshteha[3].text || reshteSelect.value == reshteha[5].value ||
             reshteSelect.value == reshteha[6].text || reshteSelect.value == reshteha[7].text || reshteSelect.value == reshteha[12].text ||
             reshteSelect.value == reshteha[13].text || reshteSelect.value == reshteha[14].text ||
-            reshteSelect.value == reshteha[16].text || reshteSelect.value == reshteha[18].text || reshteSelect.value == reshteha[15].text){
+            reshteSelect.value == reshteha[16].text || reshteSelect.value == reshteha[18].text || reshteSelect.value == reshteha[15].text ||
+            reshteSelect.value == reshteha[8].text){
                 unit.value = 2;
             } else
         /* 3 واحد */
@@ -375,6 +376,10 @@ function conditions(){
         /* 1 واحد */
         if(reshteSelect.value == reshteha[2].text || reshteSelect.value == reshteha[4].text){
             unit.value = 1;
+        } else
+        /* 6 */
+        if(reshteSelect.value == reshteha[11].text){
+            unit.value = 6;
         }
 }
 function addOption(){

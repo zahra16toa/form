@@ -76,8 +76,10 @@ fieldset{
     width: 100%;
     text-align: right;
     direction: rtl;
-    display: flex; 
+    display: flex;
     position: relative;
+    border-radius: 7px;
+    border-color: var(--blue);
 }
 .count-of-hour-unit{
     display: flex;
