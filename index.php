@@ -153,6 +153,11 @@
         </div>
     </span>
     <span class="input-form">
+        <span class="radio-span">
+            <label class="radio-label peyvaste" for="peyvaste"> پیوسته
+                <input type="radio" name="grade1" class="radio" required id="peyvaste" value="پیوسته " checked/>
+            </label>
+        </span>
         <div class="input-box">
             <input type="text" class="text-input" name="companyName" id="companyName" required>
             <label class="input-label company" for=""> نام شرکت / کارخانه / موسسه / اداره / بانک / سازمان</label>

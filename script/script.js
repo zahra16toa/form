@@ -179,8 +179,8 @@ function conditions(){
         if(reshteSelect.value == reshteha[4].text){
             gradeParagraph.classList.remove("hide");
             Lw.disabled = true;
-
-
+            karshenasi.classList.remove("show");
+            karshenasiLabel.classList.remove("show");
             gradeParagraph.innerHTML = "کارشناسی";
             napeyvasteLabel.classList.add("show");
             peyvasteLabel.classList.add("show");
