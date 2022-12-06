@@ -112,8 +112,14 @@ fieldset div{
 
 }
 .radio-span{
-    width: 80%;
+    width: 100%;
     display: flex;
+    padding-right: 10%;
+}
+.grade-div .accounting-span,
+.grade-div .electricity{
+    position: absolute;
+    top: 10px;
 }
 select {
 	width: 100%;
@@ -169,7 +175,8 @@ button:hover{
 .napeyvaste,
 .radio,
 .karshenasi-napeyvaste,
-.kardani-peyvaste{
+.kardani-peyvaste,
+.kardani-napeyvaste{
     visibility: hidden;
 }
 .show{

@@ -23,7 +23,8 @@ const kardaniPeyvaste = document.querySelector(".kardani-peyvaste");
 const karshenasiNaPeyvaste = document.querySelector(".karshenasi-napeyvaste");
 const karshenasiNaPeyvasteRadio = document.querySelector("#karshenasiNapeyvaste");
 const kardaniPeyvasteRadio = document.querySelector("#kardaniPeyvaste");
-
+const kardaniNapeyvaste = document.querySelector(".kardani-napeyvaste");
+const kardaniNapeyvasteRadio = document.querySelector("#kardaniNapeyvaste");
 
 /* form variables */
 const company = document.querySelector("#company")
@@ -85,6 +86,8 @@ function conditions(){
             karshenasiNaPeyvasteRadio.classList.remove("show");
             kardaniPeyvaste.classList.remove("show");
             kardaniPeyvasteRadio.classList.remove("show");
+            kardaniNapeyvaste.classList.remove("show");
+            kardaniNapeyvasteRadio.classList.remove("show");
         } else 
         /* کارشناسی پیوسته  */
         
@@ -113,7 +116,8 @@ function conditions(){
             karshenasiNaPeyvasteRadio.classList.remove("show");
             kardaniPeyvaste.classList.remove("show");
             kardaniPeyvasteRadio.classList.remove("show");
-            
+            kardaniNapeyvaste.classList.remove("show");
+            kardaniNapeyvasteRadio.classList.remove("show");
         } else 
         /* کاردانی پیوسته  */
     
@@ -138,7 +142,8 @@ function conditions(){
             karshenasiNaPeyvasteRadio.classList.remove("show");
             kardaniPeyvaste.classList.remove("show");
             kardaniPeyvasteRadio.classList.remove("show");
-
+            kardaniNapeyvaste.classList.remove("show");
+            kardaniNapeyvasteRadio.classList.remove("show");
         } else 
         /*  کاردانی ناپیوسته  */
         if(reshteSelect.value == reshteha[11].text){
@@ -162,6 +167,8 @@ function conditions(){
             karshenasiNaPeyvasteRadio.classList.remove("show");
             kardaniPeyvaste.classList.remove("show");
             kardaniPeyvasteRadio.classList.remove("show");
+            kardaniNapeyvaste.classList.remove("show");
+            kardaniNapeyvasteRadio.classList.remove("show");
 
         } else
         /* کارشناسی ناپیوسته و پیوسته */
@@ -180,22 +187,27 @@ function conditions(){
             karshenasiNaPeyvasteRadio.classList.remove("show");
             kardaniPeyvaste.classList.remove("show");
             kardaniPeyvasteRadio.classList.remove("show");
+            kardaniNapeyvaste.classList.remove("show");
+            kardaniNapeyvasteRadio.classList.remove("show");
         } else 
         /* کاردانی ناپیوسته و پیوسته */
+        /* معماری */
         if(reshteSelect.value == reshteha[7].text){
             napeyvasteLabel.classList.add("show");
             peyvasteLabel.classList.add("show");
             peyvaste.classList.add("show");
             naPeyvaste.classList.add("show");
             karshenasi.classList.remove("show");
-            kardaniLabel.classList.add("show");
+            kardaniLabel.classList.remove("show");
             karshenasiLabel.classList.remove("show");
-            gradeParagraph.classList.add("hide");
+            gradeParagraph.classList.add("show");
+            gradeParagraph.innerHTML = "کاردانی";
             learningWork.classList.add("hide");karshenasiNaPeyvaste.classList.remove("show");
             karshenasiNaPeyvasteRadio.classList.remove("show");
             kardaniPeyvaste.classList.remove("show");
             kardaniPeyvasteRadio.classList.remove("show");
-
+            kardaniNapeyvaste.classList.remove("show");
+            kardaniNapeyvasteRadio.classList.remove("show");
         } else 
         /* کارشناسی و کاردانی پیوسته و ناپیوسته */
         /* حسابداری */
@@ -206,24 +218,35 @@ function conditions(){
             karshenasiNaPeyvasteRadio.classList.add("show");
             kardaniPeyvaste.classList.add("show");
             gradeParagraph.classList.add("hide");
-
+            peyvaste.classList.remove("show");
+            peyvasteLabel.classList.remove("show");
+            napeyvasteLabel.classList.remove("show");
+            naPeyvaste.classList.remove("show");
+            karshenasi.classList.remove("show");
+            karshenasiLabel.classList.remove("show");
+            kardaniNapeyvaste.classList.remove("show");
+            kardaniNapeyvasteRadio.classList.remove("show");
+            kardaniNapeyvaste.classList.remove("show");
+            kardaniNapeyvasteRadio.classList.remove("show");
+            // kardaniPeyvaste.style.zIndex = "1";
         } else 
         /* کاردانی ناپیوسته و کارشناسی پیوسته و ناپیوسته */
+        /* برق */
         if(reshteSelect.value == reshteha[15].text){
-            kardani.classList.add("show");
             karshenasi.classList.add("show");
-            kardaniLabel.classList.add("show");
             karshenasiLabel.classList.add("show");
             learningWork.classList.add("hide");
             karshenasiNaPeyvaste.classList.remove("show");
             karshenasiNaPeyvasteRadio.classList.remove("show");
             kardaniPeyvaste.classList.remove("show");
             kardaniPeyvasteRadio.classList.remove("show");
-            kardani.addEventListener("click",()=>{
+            kardaniNapeyvaste.classList.add("show");
+            kardaniNapeyvasteRadio.classList.add("show");
+            kardaniNapeyvaste.addEventListener("click",()=>{
+                naPeyvaste.classList.remove("show");
+                napeyvasteLabel.classList.remove("show");
                 peyvaste.classList.remove("show");
                 peyvasteLabel.classList.remove("show");
-                napeyvasteLabel.classList.add("show");
-                naPeyvaste.classList.add("show");
             })
             karshenasi.addEventListener("click",()=>{
                 naPeyvaste.classList.add("show");
@@ -250,9 +273,11 @@ function conditions(){
             kardaniPeyvasteRadio.classList.remove("show");
             learningWork.classList.add("show");
             learningWork.classList.remove("hide");
-            
+            kardaniNapeyvaste.classList.remove("show");
+            kardaniNapeyvasteRadio.classList.remove("show");
             removeOptions();
-
+            unit.value = "1";
+            hour.value = "120";
             addOption();
             Lw.addEventListener("change",()=>{
                 if(Lw.value == nums[1].text || Lw.value == nums[2].text ||
@@ -280,7 +305,8 @@ function conditions(){
             kardaniPeyvaste.classList.remove("show");
             kardaniPeyvasteRadio.classList.remove("show");
             gradeDiv.classList.add("hide");
-            
+            kardaniNapeyvaste.classList.remove("show");
+            kardaniNapeyvasteRadio.classList.remove("show");
             gradeParagraph.classList.remove("hide");
             learningWork.classList.add("show");
             gradeParagraph.innerHTML = "کارشناسی پیوسته";
