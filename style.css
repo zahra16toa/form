@@ -112,7 +112,8 @@ fieldset div{
 
 }
 .radio-span{
-    width: 50%;
+    width: 80%;
+    display: flex;
 }
 select {
 	width: 100%;
@@ -166,7 +167,9 @@ button:hover{
 }
 .peyvaste,
 .napeyvaste,
-.radio{
+.radio,
+.karshenasi-napeyvaste,
+.kardani-peyvaste{
     visibility: hidden;
 }
 .show{
@@ -182,7 +185,7 @@ button:hover{
     display: flex;
     align-items: center;
     position: absolute;
-    width: 90%;
+    width: 82%;
     justify-content: center;
     top: 27px;
     left: 61px;

@@ -55,6 +55,16 @@
                                 <input type="radio" name="grade" class="radio" required id="kardani" value="کاردانی" />
                             </label>
                         </span>
+                        <span class="radio-span">
+                          <label class="radio-label karshenasi-napeyvaste" for="karshenasiNapeyvaste">کارشناسی ناپیوسته
+                              <input type="radio" name="grade" class="radio" required id="karshenasiNapeyvaste" value="کارشناسی " checked/>
+                            </label>
+                        </span>
+                        <span class="radio-span">
+                            <label class="radio-label kardani-peyvaste" for="kardaniPeyvaste">کاردانی پیوسته
+                                <input type="radio" name="grade" class="radio" required id="kardaniPeyvaste" value="کاردانی" />
+                            </label>
+                        </span>
                     </div>
                     <div>
                         <span class="radio-span">
