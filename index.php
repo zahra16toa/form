@@ -154,28 +154,30 @@
     </span>
     <span class="input-form">
         <div class="input-box">
-            <input type="text" class="text-input min-input" style="width: 99.5%;" name="companyName" id="companyName" required>
+            <input type="text" class="text-input" name="companyName" id="companyName" required>
             <label class="input-label company" for=""> نام شرکت / کارخانه / موسسه / اداره / بانک / سازمان</label>
         </div>
     </span>
     <span class="input-form">
         <div class="input-box">
-            <input type="text" class="text-input min-input" style="width: 99.5%; height: 40px" name="address" id="" required>
+            <input type="text" class="text-input" style="height: 40px" name="address" id="" required>
             <label class="input-label" for="">نشانی</label>
         </div>
     </span>
-    <span class="input-form">
-        <label for="more"> سایر
-            <input type="checkbox" name="" id="more">
-        </label>
-        <label for="industrial"> صنعتی
-            <input type="checkbox" name="" id="industrial">
-        </label>
-        <label for="service"> خدماتی
-            <input type="checkbox" name="" id="service">
-        </label>
-        <label for="">نوع محل کارآموزی</label>
-    </span>
+    <div>
+        <span class="input-form">
+            <label for="more"> سایر
+                <input type="checkbox" name="" id="more">
+            </label>
+            <label for="industrial"> صنعتی
+                <input type="checkbox" name="" id="industrial">
+            </label>
+            <label for="service"> خدماتی
+                <input type="checkbox" name="" id="service">
+            </label>
+            <label for="">:نوع محل کارآموزی</label>
+        </span>
+    </div>
         <button type="submit">ایجاد فرم</button>
 
     </form>
