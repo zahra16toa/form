@@ -81,7 +81,7 @@ function conditions(){
             gradeParagraph.classList.remove("hide");
 
             gradeParagraph.innerHTML = "کارشناسی ناپیوسته";
-            learningWork.classList.add("hide");
+            Lw.disabled = true;
             karshenasiNaPeyvaste.classList.remove("show");
             karshenasiNaPeyvasteRadio.classList.remove("show");
             kardaniPeyvaste.classList.remove("show");
@@ -107,7 +107,8 @@ function conditions(){
             peyvasteLabel.classList.remove("show");
             napeyvasteLabel.classList.remove("show");
             gradeDiv.classList.add("hide");
-            learningWork.classList.add("hide");
+            Lw.disabled = true;
+
             
             gradeParagraph.classList.remove("hide");
             
@@ -132,7 +133,8 @@ function conditions(){
             peyvasteLabel.classList.remove("show");
             napeyvasteLabel.classList.remove("show");
             gradeDiv.classList.add("hide");
-            learningWork.classList.add("hide");
+            Lw.disabled = true;
+
 
             gradeParagraph.classList.remove("hide");
 
@@ -162,7 +164,8 @@ function conditions(){
 
 
             gradeParagraph.innerHTML = "کاردانی ناپیوسته";
-            learningWork.classList.add("hide");
+            Lw.disabled = true;
+
             karshenasiNaPeyvaste.classList.remove("show");
             karshenasiNaPeyvasteRadio.classList.remove("show");
             kardaniPeyvaste.classList.remove("show");
@@ -175,7 +178,8 @@ function conditions(){
         /* مهندسی عمران */
         if(reshteSelect.value == reshteha[4].text){
             gradeParagraph.classList.remove("hide");
-            learningWork.classList.add("hide");
+            Lw.disabled = true;
+
 
             gradeParagraph.innerHTML = "کارشناسی";
             napeyvasteLabel.classList.add("show");
@@ -203,7 +207,9 @@ function conditions(){
             karshenasiLabel.classList.remove("show");
             gradeParagraph.classList.add("show");
             gradeParagraph.innerHTML = "کاردانی";
-            learningWork.classList.add("hide");karshenasiNaPeyvaste.classList.remove("show");
+            Lw.disabled = true;
+
+            karshenasiNaPeyvaste.classList.remove("show");
             karshenasiNaPeyvasteRadio.classList.remove("show");
             kardaniPeyvaste.classList.remove("show");
             kardaniPeyvasteRadio.classList.remove("show");
@@ -214,7 +220,8 @@ function conditions(){
         /* حسابداری */
         if(reshteSelect.value == reshteha[9].text){
             karshenasiNaPeyvaste.classList.add("show");
-            learningWork.classList.add("hide");
+            Lw.disabled = true;
+
             kardaniPeyvasteRadio.classList.add("show");
             karshenasiNaPeyvasteRadio.classList.add("show");
             kardaniPeyvaste.classList.add("show");
@@ -236,7 +243,8 @@ function conditions(){
         if(reshteSelect.value == reshteha[15].text){
             karshenasi.classList.add("show");
             karshenasiLabel.classList.add("show");
-            learningWork.classList.add("hide");
+            Lw.disabled = true;
+
             karshenasiNaPeyvaste.classList.remove("show");
             karshenasiNaPeyvasteRadio.classList.remove("show");
             kardaniPeyvaste.classList.remove("show");
@@ -274,8 +282,9 @@ function conditions(){
             karshenasiNaPeyvasteRadio.classList.remove("show");
             kardaniPeyvaste.classList.remove("show");
             kardaniPeyvasteRadio.classList.remove("show");
-            learningWork.classList.add("show");
-            learningWork.classList.remove("hide");
+            Lw.disabled = false;
+
+  
             kardaniNapeyvaste.classList.remove("show");
             kardaniNapeyvasteRadio.classList.remove("show");
             removeOptions();
@@ -313,9 +322,10 @@ function conditions(){
             kardaniNapeyvaste.classList.remove("show");
             kardaniNapeyvasteRadio.classList.remove("show");
             gradeParagraph.classList.remove("hide");
-            learningWork.classList.add("show");
+            Lw.disabled = false;
+
             gradeParagraph.innerHTML = "کارشناسی پیوسته";
-            learningWork.classList.remove("hide");
+
             removeOptions();
             addOption1();
         }   
