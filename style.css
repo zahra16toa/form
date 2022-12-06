@@ -304,11 +304,10 @@ input[type="radio"]:checked::before{
         margin: 0;
         width: 100%;
     }
-    .learning-work-label{
-        right: 25;
-    }
+    
     .count-of-hour-unit{
         display: flex;
+        flex-direction: row;
         gap: 5px;
     }
     label{
@@ -326,8 +325,15 @@ input[type="radio"]:checked::before{
         font-size: 10;
     }
     .grade{
-        top: 18%;
+        top: 35%;
         left: 10%;
+    }
+    .grade-div{
+        display: flex;
+        flex-direction: row;
+    }
+    .kardani-napeyvaste{
+        margin: 3% 0 0 50%;
     }
     .radio-span label{
         width: 100%;
@@ -357,7 +363,7 @@ input[type="radio"]:checked::before{
     }
 
     div.form-title{
-        padding: 10% 39%;
+        padding: 10% 36%;
     }
     .register-form{
         margin: 0;
@@ -384,8 +390,8 @@ input[type="radio"]:checked::before{
         font-size: .5em;
         padding: 0 3px;
     }
-    .learning-work-label{
-        right: 28;
+    .kardani-napeyvaste{
+        margin: 5% 0 0 50%;
     }
     fieldset label{
         font-size: 12pt;
