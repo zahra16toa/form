@@ -292,15 +292,23 @@ input[type="radio"]:checked::before{
     direction: ltr;
     font-size: 12pt;
 }
- form > div:nth-child(11) > span > label,
+ form > div:nth-child(12) > span > label,
  input[type="checkbox"]{
     cursor: pointer;
  }
- form > div:nth-child(11){
+form > div:nth-child(11),
+form > div:nth-child(12){
     padding: 10px 5%;
     border: 1px solid var(--gray);
     border-radius: 6px;
     width: 100%;
+    position: relative;
+ }
+ .input-form .radio-span{
+    padding-right: 3%;
+ }
+ body > form > div:nth-child(11) > span > label{
+    right: 20;
  }
 /* media queries */
 @media (max-width: 700px) {

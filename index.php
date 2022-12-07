@@ -153,11 +153,24 @@
         </div>
     </span>
     <span class="input-form">
+    <!-- <div>
         <span class="radio-span">
-            <label class="radio-label peyvaste" for="peyvaste"> پیوسته
-                <input type="radio" name="grade1" class="radio" required id="peyvaste" value="پیوسته " checked/>
+            <label class="radio-label" for="Company"> شرکت
+                <input type="radio" name="" class="learning-work-radio" required id="Company" value="" checked/>
             </label>
         </span>
+        <span class="radio-span">
+            <label class="radio-label" for="industrialCompany"> کارخانه
+                <input type="radio" name="" class="learning-work-radio" required id="industrialCompany" value=" " checked/>
+            </label>
+        </span>
+        <span class="radio-span">
+            <label class="radio-label" for="association"> موسسه
+                <input type="radio" name="" class="learning-work-radio" required id="association" value=" " checked/>
+            </label>
+        </span>
+        <label>محل کارآموزی:</label>
+    </div> -->
         <div class="input-box">
             <input type="text" class="text-input" name="companyName" id="companyName" required>
             <label class="input-label company" for=""> نام شرکت / کارخانه / موسسه / اداره / بانک / سازمان</label>
@@ -169,6 +182,47 @@
             <label class="input-label" for="">نشانی</label>
         </div>
     </span>
+    <div>
+        <span class="input-form">
+        <span class="radio-span">
+            <label class="radio-label" for="more"> سایر
+                <input type="radio" name="work" class="learning-work-radio" required id="more" value=" " />
+            </label>
+        </span>
+        <span class="radio-span">
+            <label class="radio-label" for="Company"> شرکت
+                <input type="radio" name="work" class="learning-work-radio" required id="Company" value="" />
+            </label>
+        </span>
+        <span class="radio-span">
+            <label class="radio-label" for="industrialCompany"> کارخانه
+                <input type="radio" name="work" class="learning-work-radio" required id="industrialCompany" value=" " />
+            </label>
+        </span>
+        <span class="radio-span">
+            <label class="radio-label" for="association"> موسسه
+                <input type="radio" name="work" class="learning-work-radio" required id="association" value=" " />
+            </label>
+        </span>
+        <span class="radio-span">
+            <label class="radio-label" for="edare"> اداره
+                <input type="radio" name="work" class="learning-work-radio" required id="edare" value=" " />
+            </label>
+        </span>
+        <span class="radio-span">
+            <label class="radio-label" for="bank"> بانک
+                <input type="radio" name="work" class="learning-work-radio" required id="bank" value=" " />
+            </label>
+        </span>
+        <span class="radio-span">
+            <label class="radio-label" for="sazman"> سازمان
+                <input type="radio" name="work" class="learning-work-radio" required id="sazman" value=" " checked/>
+            </label>
+        </span>
+       
+            <label class="input-label" id="unitLabel" for="">:محل کارآموزی</label>
+        </span>
+    </div>
     <div>
         <span class="input-form">
             <label for="more"> سایر
@@ -183,6 +237,7 @@
             <label for="">:نوع محل کارآموزی</label>
         </span>
     </div>
+
         <button type="submit">ایجاد فرم</button>
 
     </form>
