@@ -381,7 +381,9 @@ form > div:nth-child(12){
     select{
         width: 100%;
     }
-
+    .place{
+        transform: translateY(-76px);
+    }
     div.form-title{
         padding: 10% 36%;
     }

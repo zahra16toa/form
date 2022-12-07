@@ -220,7 +220,7 @@
             </label>
         </span>
        
-            <label class="input-label" id="unitLabel" for="">:محل کارآموزی</label>
+            <label class="input-label place" id="unitLabel" for="">:محل کارآموزی</label>
         </span>
     </div>
     <div>
