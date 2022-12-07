@@ -310,6 +310,11 @@ form > div:nth-child(12){
  body > form > div:nth-child(11) > span > label{
     right: 20;
  }
+ body > form > div:nth-child(11) > span{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 86px);
+    gap: 10px;
+ }
 /* media queries */
 @media (max-width: 700px) {
     .form-title{

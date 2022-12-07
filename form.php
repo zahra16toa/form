@@ -9,18 +9,19 @@
 <body>
 <?php
 // define variables and set to empty values
-$name = $lName = $stuId = $hourCount = $professor = $branch = $grade = $comName = "";
-$space = "&nbsp;";
+$name = $lName = $stuId = $hourCount = $professor = $branch = $grade = $comName = $companyType = "";
+$space  = "&nbsp;";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  $name = test_input($_POST["fName"] . $_POST["lName"]);
+  $name = test_input($_POST["fName"] . " " . $_POST["lName"]);
   $lName = test_input($_POST["lName"]);
   $stuId = test_input($_POST["studentId"]);
   $hourCount = test_input($_POST["hour"]);
   $professor = test_input($_POST["professorName"]);
   $branch = test_input($_POST["branch"]);
-  $grade = test_input($_POST["grade"] . $_POST["grade1"]);
+  $grade = test_input($_POST["grade"] . " " . $_POST["grade1"]);
   $comName = test_input($_POST["companyName"]);
+  $companyType = test_input($_POST["work"]);
 }
 
 function test_input($data) {
@@ -45,12 +46,12 @@ function test_input($data) {
         <p>دفتر ارتباط با صنعت</p>
     </div>
     <div class="body">
-        <h5>به شرکت / کارخانه / موسسه / اداره / بانک / سازمان: <span><?php echo($comName); ?></span></h5>
+        <h5>به <span><?php echo($companyType); ?></span>: <span><?php echo($comName); ?></span></h5>
         <h5>از: دفتر ارتباط با صنعت دانشگاه آزاد اسلامی</h5>
         <h5>موضوع: کارآموزی</h5>
         <h5>سلام علیکم</h5> <br> <br>
         <div>
-            بدینوسیله <strong><?php echo($name); ?></strong> دانشجوی <strong><?php echo($grade);  echo($grade1);?> </strong>
+            بدینوسیله <strong><?php echo($name); ?></strong> دانشجوی <strong><?php echo($grade);?> </strong>
              رشته <strong><?php echo($branch); ?></strong> به شماره دانشجویی <strong><?php echo($stuId); ?></strong>
             را جهت گذراندن یک دوره کارآموزی به مدت  ساعت معرفی می نمائید.
                 <p>ضمنا استاد کارآموزی ایشان دکتر <strong><?php echo($professor); ?></strong> می باشد. 

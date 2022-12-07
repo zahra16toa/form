@@ -185,38 +185,38 @@
     <div>
         <span class="input-form">
         <span class="radio-span">
-            <label class="radio-label" for="more"> سایر
-                <input type="radio" name="work" class="learning-work-radio" required id="more" value=" " />
+            <label class="radio-label" for="More"> سایر
+                <input type="radio" name="work" class="learning-work-radio" required id="More" value="سایر" />
             </label>
         </span>
         <span class="radio-span">
             <label class="radio-label" for="Company"> شرکت
-                <input type="radio" name="work" class="learning-work-radio" required id="Company" value="" />
+                <input type="radio" name="work" class="learning-work-radio" required id="Company" value="شرکت" />
             </label>
         </span>
         <span class="radio-span">
             <label class="radio-label" for="industrialCompany"> کارخانه
-                <input type="radio" name="work" class="learning-work-radio" required id="industrialCompany" value=" " />
+                <input type="radio" name="work" class="learning-work-radio" required id="industrialCompany" value="کارخانه" />
             </label>
         </span>
         <span class="radio-span">
             <label class="radio-label" for="association"> موسسه
-                <input type="radio" name="work" class="learning-work-radio" required id="association" value=" " />
+                <input type="radio" name="work" class="learning-work-radio" required id="association" value="موسسه" />
             </label>
         </span>
         <span class="radio-span">
             <label class="radio-label" for="edare"> اداره
-                <input type="radio" name="work" class="learning-work-radio" required id="edare" value=" " />
+                <input type="radio" name="work" class="learning-work-radio" required id="edare" value="اداره" />
             </label>
         </span>
         <span class="radio-span">
             <label class="radio-label" for="bank"> بانک
-                <input type="radio" name="work" class="learning-work-radio" required id="bank" value=" " />
+                <input type="radio" name="work" class="learning-work-radio" required id="bank" value="بانک" />
             </label>
         </span>
         <span class="radio-span">
             <label class="radio-label" for="sazman"> سازمان
-                <input type="radio" name="work" class="learning-work-radio" required id="sazman" value=" " checked/>
+                <input type="radio" name="work" class="learning-work-radio" required id="sazman" value="سازمان" checked/>
             </label>
         </span>
        
