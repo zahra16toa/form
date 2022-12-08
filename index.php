@@ -22,7 +22,7 @@
             <label class="input-label" for="l-name">(الزامی)نام خانوادگی</label>
         </div>
         <div class="input-box">
-            <input type="number" name="studentId" maxlength="9" class="text-input" id="studentId" required>
+            <input type="number" name="studentId" min="9" max="9" class="text-input" id="studentId" required>
             <label class="input-label"  for="student-id">(الزامی)شماره دانشجویی</label>
         </div>
         <div class="select-group">
@@ -106,7 +106,7 @@
         
     <span class="input-form">
             <div class="input-box">
-                <input type="number" maxlength="4" class="text-input min-input" name="yearOfUni" id="" required>
+                <input type="number" maxlength="4" min="4" max="4" class="text-input min-input" name="yearOfUni" id="" required>
                 <label class="input-label" for="">ورودی</label>
             </div>
             <div class="input-box">
@@ -118,13 +118,13 @@
                 <label class="input-label" for="">صادره از</label>
             </div>
             <div class="input-box">
-                <input type="number" maxlength="4" class="text-input min-input" name="" id="" required>
+                <input type="number" maxlength="4" min="4" max="4" class="text-input min-input" name="" id="" required>
                 <label class="input-label" for="">متولد</label>
             </div>
     </span>
     <span class="input-form">
         <div class="input-box">
-            <input type="number" maxlength="10" style="width: 99.5%" class="text-input min-input" name="nationalId" id="" required>
+            <input type="number" maxlength="10" min="10" max="10" style="width: 99.5%" class="text-input min-input" name="nationalId" id="" required>
             <label class="input-label" for="">شماره شناسنامه</label>
         </div>
         <div class="input-box">
@@ -145,7 +145,7 @@
     </span>
     <span class="input-form">
         <div class="input-box">
-            <input type="number" class="text-input" maxlength="11" name="companyTel" id="" required >
+            <input type="number" class="text-input" maxlength="11" min="11" max="11" name="companyTel" id="" required >
             <label class="input-label tel" for="">تلفن شرکت</label>
         </div>
          <div class="input-box">
