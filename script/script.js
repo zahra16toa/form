@@ -487,8 +487,3 @@ karshenasi.addEventListener("click", ()=>{
 /* main */
 fillSelect();
 // sudentId.attributes.add("onkeypress","return inNumberKey(event)");
-$(document).ready(function(){
-    $("#studentId").inputFilter(function(value){
-        return /^\d*$/.test(value);
-    },"Only digits allowed");
-});

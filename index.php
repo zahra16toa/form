@@ -14,15 +14,15 @@
     </div>
     <form action="form.php" method="POST" class="register-form">
         <div class="input-box">
-            <input type="text" name="fName" class="text-input" id="" required>
+            <input type="text" onkeypress="return isLetter(event);" name="fName" class="text-input" id="" required>
             <label class="input-label" for="name">(الزامی)نام</label>
         </div>
         <div class="input-box">
-            <input type="text" name="lName" class="text-input" id="" required>
+            <input type="text" onkeypress="return isLetter(event);" name="lName" class="text-input" id="" required>
             <label class="input-label" for="l-name">(الزامی)نام خانوادگی</label>
         </div>
         <div class="input-box">
-            <input type="number" name="studentId" min="9" max="9" class="text-input" id="studentId" required>
+            <input type="text" onkeypress="return isNumber(event);" name="studentId" maxlength="9" class="text-input" id="studentId" required>
             <label class="input-label"  for="student-id">(الزامی)شماره دانشجویی</label>
         </div>
         <div class="select-group">
@@ -106,29 +106,29 @@
         
     <span class="input-form">
             <div class="input-box">
-                <input type="number" maxlength="4" min="4" max="4" class="text-input min-input" name="yearOfUni" id="" required>
+                <input type="text" maxlength="4" onkeypress="return isNumber(event);" class="text-input min-input" name="yearOfUni" id="" required>
                 <label class="input-label" for="">ورودی</label>
             </div>
             <div class="input-box">
-                <input type="text" class="text-input min-input" name="fatherName" id="" required>
+                <input type="text" onkeypress="return isLetter(event);" class="text-input min-input" name="fatherName" id="" required>
                 <label class="input-label" for="">نام پدر</label>
             </div>
             <div class="input-box">
-                <input type="text" class="text-input min-input" name="" id="" required>
+                <input type="text" onkeypress="return isLetter(event);" class="text-input min-input" name="" id="" required>
                 <label class="input-label" for="">صادره از</label>
             </div>
             <div class="input-box">
-                <input type="number" maxlength="4" min="4" max="4" class="text-input min-input" name="" id="" required>
+                <input type="text" maxlength="4" onkeypress="return isNumber(event);" class="text-input min-input" name="" id="" required>
                 <label class="input-label" for="">متولد</label>
             </div>
     </span>
     <span class="input-form">
         <div class="input-box">
-            <input type="number" maxlength="10" min="10" max="10" style="width: 99.5%" class="text-input min-input" name="nationalId" id="" required>
+            <input type="text" maxlength="10" onkeypress="return isNumber(event);" style="width: 99.5%" class="text-input min-input" name="nationalId" id="" required>
             <label class="input-label" for="">شماره شناسنامه</label>
         </div>
         <div class="input-box">
-            <input type="number" class="text-input min-input" maxlength="11" name="studentTel" id="" required >
+            <input type="text" class="text-input min-input" maxlength="11" onkeypress="return isNumber(event);" name="studentTel" id="" required >
             <label class="input-label tel" for="">شماره تماس دانشجو</label>
         </div>
     </span>
@@ -139,29 +139,29 @@
                 <option value="بهمن 4002">تابستان 4002</option></select>
         </div>
         <div class="input-box">
-            <input type="text" class="text-input min-input" name="professorName" id="" required>
+            <input type="text" onkeypress="return isLetter(event);" class="text-input min-input" name="professorName" id="" required>
             <label class="input-label" for="">نام استاد</label>
         </div>
     </span>
     <span class="input-form">
         <div class="input-box">
-            <input type="number" class="text-input" maxlength="11" min="11" max="11" name="companyTel" id="" required >
+            <input type="text" class="text-input" maxlength="11" onkeypress="return isNumber(event);" name="companyTel" id="" required >
             <label class="input-label tel" for="">تلفن شرکت</label>
         </div>
          <div class="input-box">
-            <input type="text" class="text-input min-input" maxlength="50" name="companyManagement" id="" required >
+            <input type="text" onkeypress="return isLetter(event);" class="text-input min-input" maxlength="50" name="companyManagement" id="" required >
             <label class="input-label tel" for="">مدیریت</label>
         </div>
     </span>
     <span class="input-form">
         <div class="input-box">
-            <input type="text" class="text-input" name="companyName" id="companyName" required>
+            <input type="text" onkeypress="return isLetter(event);" class="text-input" name="companyName" id="companyName" required>
             <label class="input-label company" for=""> نام شرکت / کارخانه / موسسه / اداره / بانک / سازمان</label>
         </div>
     </span>
     <span class="input-form">
         <div class="input-box">
-            <input type="text" class="text-input" style="height: 40px" name="address" id="" required>
+            <input type="text" class="text-input" onkeypress="return isLetter(event);" style="height: 40px" name="address" id="" required>
             <label class="input-label" for="">نشانی</label>
         </div>
     </span>
@@ -225,7 +225,22 @@
 
     </form>
     <script src="script/script.js"></script>
-  
+    <script>
+        function isNumber(evt) {
+            let charCode = (evt.which) ? evt.which : event.keyCode;
+            if (charCode > 31 && (charCode < 48 || charCode > 57 ) )
+                return false;
+            return true;
+        }
+        function isLetter(evt) {
+            let charCode = (evt.which) ? evt.which : event.keyCode;
+            if( charCode > 31 && (charCode < 31 || charCode > 128 )){
+                return true;
+            }
+                return false;
+            
+        }
+    </script>
     <!-- <script src="script/farsiType.js"></script> -->
 </body>
 </html>
