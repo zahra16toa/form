@@ -26,6 +26,7 @@ const kardaniPeyvasteRadio = document.querySelector("#kardaniPeyvaste");
 const kardaniNapeyvaste = document.querySelector(".kardani-napeyvaste");
 const kardaniNapeyvasteRadio = document.querySelector("#kardaniNapeyvaste");
 const sudentId = document.querySelector("#studentId");
+const formGrade = document.querySelector("#stuGrade");
 /* form variables */
 const company = document.querySelector("#company")
 /* objects */
@@ -80,7 +81,7 @@ function conditions(){
             gradeDiv.classList.add("hide");
             gradeParagraph.classList.remove("hide");
 
-            gradeParagraph.innerHTML = "کارشناسی ناپیوسته";
+            gradeParagraph.value = "کارشناسی ناپیوسته";
             Lw.disabled = true;
             karshenasiNaPeyvaste.classList.remove("show");
             karshenasiNaPeyvasteRadio.classList.remove("show");
@@ -112,7 +113,7 @@ function conditions(){
             
             gradeParagraph.classList.remove("hide");
             
-            gradeParagraph.innerHTML = "کارشناسی پیوسته";
+            gradeParagraph.value = "کارشناسی پیوسته";
             karshenasiNaPeyvaste.classList.remove("show");
             karshenasiNaPeyvasteRadio.classList.remove("show");
             kardaniPeyvaste.classList.remove("show");
@@ -139,7 +140,7 @@ function conditions(){
             gradeParagraph.classList.remove("hide");
 
 
-            gradeParagraph.innerHTML = "کاردانی پیوسته";
+            gradeParagraph.value = "کاردانی پیوسته";
             karshenasiNaPeyvaste.classList.remove("show");
             karshenasiNaPeyvasteRadio.classList.remove("show");
             kardaniPeyvaste.classList.remove("show");
@@ -163,7 +164,7 @@ function conditions(){
             gradeParagraph.classList.remove("hide");
 
 
-            gradeParagraph.innerHTML = "کاردانی ناپیوسته";
+            gradeParagraph.value = "کاردانی ناپیوسته";
             Lw.disabled = true;
 
             karshenasiNaPeyvaste.classList.remove("show");
@@ -181,7 +182,7 @@ function conditions(){
             Lw.disabled = true;
             karshenasi.classList.remove("show");
             karshenasiLabel.classList.remove("show");
-            gradeParagraph.innerHTML = "کارشناسی";
+            gradeParagraph.value = "کارشناسی";
             napeyvasteLabel.classList.add("show");
             peyvasteLabel.classList.add("show");
             naPeyvaste.classList.add("show");
@@ -206,7 +207,6 @@ function conditions(){
             kardaniLabel.classList.remove("show");
             karshenasiLabel.classList.remove("show");
             gradeParagraph.classList.add("show");
-            gradeParagraph.innerHTML = "کاردانی";
             gradeParagraph.value = "کاردانی";
             Lw.disabled = true;
 
@@ -303,7 +303,7 @@ function conditions(){
                 }
             })
             gradeParagraph.classList.remove("hide");
-            gradeParagraph.innerHTML = "کارشناسی پیوسته";
+            gradeParagraph.value = "کارشناسی پیوسته";
         } else 
         /* مهندسی صنایع غذایی */
         if(reshteSelect.value == reshteha[10].text){
@@ -325,7 +325,7 @@ function conditions(){
             gradeParagraph.classList.remove("hide");
             Lw.disabled = false;
 
-            gradeParagraph.innerHTML = "کارشناسی پیوسته";
+            gradeParagraph.value = "کارشناسی پیوسته";
 
             removeOptions();
             addOption1();

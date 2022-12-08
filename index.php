@@ -42,7 +42,7 @@
                     </div>
                 </div>
                 
-                <p class="grade" name="grade2"></p>
+                <input type="text" class="grade" name="gradeInput">
                 <div class="grade-div">
 
                   <div>
@@ -66,12 +66,12 @@
                     <div class="accounting-span">
                         <span class="radio-span">
                           <label class="radio-label karshenasi-napeyvaste" for="karshenasiNapeyvaste">کارشناسی ناپیوسته
-                              <input type="radio" name="grade" class="radio" required id="karshenasiNapeyvaste" value="کارشناسی " checked/>
+                              <input type="radio" name="grade2" class="radio" required id="karshenasiNapeyvaste" value=" کارشناسی ناپیوسته" checked/>
                             </label>
                         </span>
                         <span class="radio-span">
                             <label class="radio-label kardani-peyvaste" for="kardaniPeyvaste">کاردانی پیوسته
-                                <input type="radio" name="grade" class="radio" required id="kardaniPeyvaste" value="کاردانی" />
+                                <input type="radio" name="grade2" class="radio" required id="kardaniPeyvaste" value=" کاردانی پیوسته" />
                             </label>
                         </span>
                     </div>

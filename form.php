@@ -9,7 +9,7 @@
 <body>
 <?php
 // define variables and set to empty values
-$name = $lName = $stuId = $hourCount = $professor = $branch = $grade = $comName = $companyType = $grade2 = "";
+$name = $lName = $stuId = $hourCount = $professor = $branch = $grade = $grade1 = $comName = $companyType = $grade2 = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $name = test_input($_POST["fName"] . " " . $_POST["lName"]);
@@ -18,8 +18,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $hourCount = test_input($_POST["hour"]);
   $professor = test_input($_POST["professorName"]);
   $branch = test_input($_POST["branch"]);
-  $grade = test_input($_POST["grade"] . " " . $_POST["grade1"]);
+  $grade = test_input($_POST["grade"]);
+  $grade1 = test_input($_POST["grade1"]);
   $grade2 = test_input($_POST["grade2"]);
+  $gradeInput = test_input($_POST["gradeInput"]);
   $comName = test_input($_POST["companyName"]);
   $companyType = test_input($_POST["work"]);
 }
@@ -30,6 +32,7 @@ function test_input($data) {
   $data = htmlspecialchars($data);
   return $data;
 }
+
 ?>
     <div class="head">
         <div class="date">
@@ -52,7 +55,19 @@ function test_input($data) {
         <h5>سلام علیکم</h5> <br> <br>
         <div>
             بدینوسیله <strong><?php echo($name); ?></strong> دانشجوی <strong id="stuGrade"><?php 
+            if($branch == 'حسابداری'){
                 echo($grade2);
+            } else if($branch == 'برق'){
+                if($grade == 'کارشناسی'){
+                    echo($grade . " " . $grade1);
+                }
+            } else if($branch == 'مهندسی عمران'){
+                echo('کارشناسی' .' '. $grade1);
+            } else if($branch == 'معماری'){
+                echo('کاردانی' .' '. $grade1);
+            } else {
+                echo($gradeInput);
+            }
             ?> </strong>
              رشته <strong><?php echo($branch); ?></strong> به شماره دانشجویی <strong><?php echo($stuId); ?></strong>
             را جهت گذراندن یک دوره کارآموزی به مدت  ساعت معرفی می نمائید.
