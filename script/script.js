@@ -207,6 +207,7 @@ function conditions(){
             karshenasiLabel.classList.remove("show");
             gradeParagraph.classList.add("show");
             gradeParagraph.innerHTML = "کاردانی";
+            gradeParagraph.value = "کاردانی";
             Lw.disabled = true;
 
             karshenasiNaPeyvaste.classList.remove("show");

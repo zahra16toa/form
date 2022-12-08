@@ -193,10 +193,12 @@ button:hover{
     display: flex;
     align-items: center;
     position: absolute;
-    width: 82%;
+    width: 20%;
     justify-content: center;
     top: 27px;
-    left: 61px;
+    left: 40%;
+    outline: none;
+    border: none;
 }
 .input-form{
     width: 100%;
@@ -312,7 +314,7 @@ form > div:nth-child(12){
  }
  body > form > div:nth-child(11) > span{
     display: grid;
-    grid-template-columns: repeat(auto-fit, 86px);
+    grid-template-columns: repeat(auto-fit, 75px);
     gap: 10px;
  }
 /* media queries */

@@ -9,8 +9,7 @@
 <body>
 <?php
 // define variables and set to empty values
-$name = $lName = $stuId = $hourCount = $professor = $branch = $grade = $comName = $companyType = "";
-$space  = "&nbsp;";
+$name = $lName = $stuId = $hourCount = $professor = $branch = $grade = $comName = $companyType = $grade2 = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $name = test_input($_POST["fName"] . " " . $_POST["lName"]);
@@ -20,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $professor = test_input($_POST["professorName"]);
   $branch = test_input($_POST["branch"]);
   $grade = test_input($_POST["grade"] . " " . $_POST["grade1"]);
+  $grade2 = test_input($_POST["grade2"]);
   $comName = test_input($_POST["companyName"]);
   $companyType = test_input($_POST["work"]);
 }
@@ -51,7 +51,9 @@ function test_input($data) {
         <h5>موضوع: کارآموزی</h5>
         <h5>سلام علیکم</h5> <br> <br>
         <div>
-            بدینوسیله <strong><?php echo($name); ?></strong> دانشجوی <strong><?php echo($grade);?> </strong>
+            بدینوسیله <strong><?php echo($name); ?></strong> دانشجوی <strong id="stuGrade"><?php 
+                echo($grade2);
+            ?> </strong>
              رشته <strong><?php echo($branch); ?></strong> به شماره دانشجویی <strong><?php echo($stuId); ?></strong>
             را جهت گذراندن یک دوره کارآموزی به مدت  ساعت معرفی می نمائید.
                 <p>ضمنا استاد کارآموزی ایشان دکتر <strong><?php echo($professor); ?></strong> می باشد. 

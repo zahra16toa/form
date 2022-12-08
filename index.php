@@ -41,7 +41,7 @@
                     </div>
                 </div>
                 
-                <p class="grade"></p>
+                <p class="grade" name="grade2"></p>
                 <div class="grade-div">
 
                   <div>
@@ -153,24 +153,6 @@
         </div>
     </span>
     <span class="input-form">
-    <!-- <div>
-        <span class="radio-span">
-            <label class="radio-label" for="Company"> شرکت
-                <input type="radio" name="" class="learning-work-radio" required id="Company" value="" checked/>
-            </label>
-        </span>
-        <span class="radio-span">
-            <label class="radio-label" for="industrialCompany"> کارخانه
-                <input type="radio" name="" class="learning-work-radio" required id="industrialCompany" value=" " checked/>
-            </label>
-        </span>
-        <span class="radio-span">
-            <label class="radio-label" for="association"> موسسه
-                <input type="radio" name="" class="learning-work-radio" required id="association" value=" " checked/>
-            </label>
-        </span>
-        <label>محل کارآموزی:</label>
-    </div> -->
         <div class="input-box">
             <input type="text" class="text-input" name="companyName" id="companyName" required>
             <label class="input-label company" for=""> نام شرکت / کارخانه / موسسه / اداره / بانک / سازمان</label>
