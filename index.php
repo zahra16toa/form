@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="script/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
@@ -21,7 +22,7 @@
             <label class="input-label" for="l-name">(الزامی)نام خانوادگی</label>
         </div>
         <div class="input-box">
-            <input type="text" name="studentId" maxlength="9" class="text-input" id="studentId" required>
+            <input type="number" name="studentId" maxlength="9" class="text-input" id="studentId" required>
             <label class="input-label"  for="student-id">(الزامی)شماره دانشجویی</label>
         </div>
         <div class="select-group">
@@ -105,7 +106,7 @@
         
     <span class="input-form">
             <div class="input-box">
-                <input type="text" maxlength="4" class="text-input min-input" name="yearOfUni" id="" required>
+                <input type="number" maxlength="4" class="text-input min-input" name="yearOfUni" id="" required>
                 <label class="input-label" for="">ورودی</label>
             </div>
             <div class="input-box">
@@ -117,17 +118,17 @@
                 <label class="input-label" for="">صادره از</label>
             </div>
             <div class="input-box">
-                <input type="text" maxlength="4" class="text-input min-input" name="" id="" required>
+                <input type="number" maxlength="4" class="text-input min-input" name="" id="" required>
                 <label class="input-label" for="">متولد</label>
             </div>
     </span>
     <span class="input-form">
         <div class="input-box">
-            <input type="text" maxlength="10" style="width: 99.5%" class="text-input min-input" name="nationalId" id="" required>
+            <input type="number" maxlength="10" style="width: 99.5%" class="text-input min-input" name="nationalId" id="" required>
             <label class="input-label" for="">شماره شناسنامه</label>
         </div>
         <div class="input-box">
-            <input type="text" class="text-input min-input" maxlength="11" name="studentTel" id="" required >
+            <input type="number" class="text-input min-input" maxlength="11" name="studentTel" id="" required >
             <label class="input-label tel" for="">شماره تماس دانشجو</label>
         </div>
     </span>
@@ -144,7 +145,7 @@
     </span>
     <span class="input-form">
         <div class="input-box">
-            <input type="text" class="text-input" maxlength="11" name="companyTel" id="" required >
+            <input type="number" class="text-input" maxlength="11" name="companyTel" id="" required >
             <label class="input-label tel" for="">تلفن شرکت</label>
         </div>
          <div class="input-box">
