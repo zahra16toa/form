@@ -6,6 +6,7 @@ require_once 'query/connection.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="styles/style.css">
     <title>forms</title>
 </head>
@@ -119,6 +120,8 @@ function test_input($data) {
         <p>دکتر امیر فتاح</p>
         <p>مدیر ارتباط با صنعت</p>
     </div>
+    <button onclick="window.print()">پرینت</button>
+
     <?php 
         if($branch != 'مهندسی علوم دامی' && $branch != 'مهندسی صنایع غذایی'){
             $internshipNumber = null;
@@ -143,6 +146,7 @@ function test_input($data) {
         
 
     ?>
+
     <script src="script/script.js"></script>
 </body>
 </html>

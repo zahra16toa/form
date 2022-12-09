@@ -1,3 +1,4 @@
+@import url('../style.css');
 *{
     box-sizing: border-box;
     margin: 0;
@@ -15,6 +16,7 @@ body{
     padding: 50px 7%;
     font-family: "Vazir";
     direction: rtl;
+    background: none;
 }
 .head{
     padding: 20px;
@@ -60,4 +62,11 @@ input{
     width: 50%;
     margin: 70px 50%;
     direction: ltr;
+}
+button{
+    margin: -9% 10%;
+    color: var(--blue);
+}
+@media print {
+    button{ display: none; }
 }
