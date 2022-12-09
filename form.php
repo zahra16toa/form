@@ -1,3 +1,6 @@
+<?php
+require_once 'query/connection.php';
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,34 +10,52 @@
     <title>forms</title>
 </head>
 <body>
-<?php
-// define variables and set to empty values
-$name = $lName = $stuId = $hourCount = $professor = $branch = $grade = $grade1 = $comName = $companyType = $grade2 = "";
+    <?php
+    // define variables and set to empty value
+$name = $lName = $stuId = $hourCount = $professor = $branch = $grade = $grade1 = $comName = $companyType = $grade2 = $sqlGrade = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    /* student table */
   $name = test_input($_POST["fName"] . " " . $_POST["lName"]);
+  $fName = test_input($_POST["fName"]);
   $lName = test_input($_POST["lName"]);
   $stuId = test_input($_POST["studentId"]);
-  $hourCount = test_input($_POST["hour"]);
-  $professor = test_input($_POST["professorName"]);
-  $branch = test_input($_POST["branch"]);
+  $birth = test_input($_POST["birth"]);
+  $city = test_input($_POST["city"]);
+  $father = test_input($_POST["fatherName"]);
+  $yearOfUni = test_input($_POST["yearOfUni"]);
+  $stuTel = test_input($_POST["studentTel"]);
+  $nationalId = test_input($_POST["nationalId"]);
   $grade = test_input($_POST["grade"]);
   $grade1 = test_input($_POST["grade1"]);
   $grade2 = test_input($_POST["grade2"]);
   $gradeInput = test_input($_POST["gradeInput"]);
+    /* professor table */
+  $professor = test_input($_POST["professorName"]);
+
+    /* branch table */
+
+  $hourCount = test_input($_POST["hour"]);
+  $branch = test_input($_POST["branch"]);
+  $unitCount = test_input($_POST["unit"]);
+    /* internship table */
   $comName = test_input($_POST["companyName"]);
   $companyType = test_input($_POST["work"]);
+  $companyTel = test_input($_POST["companyTel"]);
+  $internType = test_input($_POST["internType"]);
+  $Address = test_input($_POST["address"]);
+  $management = test_input($_POST["companyManagement"]);
 }
-
 function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
 }
 
 ?>
-    <div class="head">
+
+<div class="head">
         <div class="date">
             <p> :تاریخ نامه</p>
             <p> :شماره نامه</p>
@@ -56,16 +77,24 @@ function test_input($data) {
         <div>
             بدینوسیله <strong><?php echo($name); ?></strong> دانشجوی <strong id="stuGrade"><?php 
             if($branch == 'حسابداری'){
-                echo($grade2);
+                $sqlGrade = $grade2;
+                echo($sqlGrade);
             } else if($branch == 'برق'){
                 if($grade == 'کارشناسی'){
-                    echo($grade . " " . $grade1);
+                    $sqlGrade = $grade . " " . $grade1;
+                    echo($sqlGrade);
+                } else if($grade == 'کاردانی ناپیوسته'){
+                    $sqlGrade = $grade;
+                    echo($sqlGrade);
                 }
             } else if($branch == 'مهندسی عمران'){
-                echo('کارشناسی' .' '. $grade1);
+                $sqlGrade = 'کارشناسی' .' '. $grade1;
+                echo($sqlGrade);
             } else if($branch == 'معماری'){
-                echo('کاردانی' .' '. $grade1);
+                $sqlGrade = 'کاردانی' .' '. $grade1;
+                echo($sqlGrade);
             } else {
+                $sqlGrade = $gradeInput;
                 echo($gradeInput);
             }
             ?> </strong>
@@ -89,6 +118,28 @@ function test_input($data) {
         <p>دکتر امیر فتاح</p>
         <p>مدیر ارتباط با صنعت</p>
     </div>
+    <?php 
+
+        $studentQuery = "INSERT INTO studentTable(Fname,Lname,studentId,birthYear,city,fatherName,yearOfUni,tel,idNumber,grade) 
+        VALUES('$fName','$lName','$stuId','$birth','$city','$father','$yearOfUni','$stuTel','$nationalId','$sqlGrade')";
+        $professorQuery = "INSERT INTO professorTable(professorName) VALUES('$professor')";
+        $internshipQuery = "INSERT INTO internship_table(name,internPlace,internTel,internType,Address,management) 
+        VALUES('$comName','$companyType','$companyTel','$internType','$Address','$management')";
+        $branchQuery = "INSERT INTO branchTable(branchName,internshipBranch,unitCount,hourCount) 
+        VALUES('$branch','','$unitCount','$hourCount')";
+
+        $stuSql = mysqli_query($mysqli_link, $studentQuery);
+        $proSql = mysqli_query($mysqli_link, $professorQuery);
+        $internSql = mysqli_query($mysqli_link, $internshipQuery);
+        $branchSql = mysqli_query($mysqli_link, $branchQuery);
+        if (mysqli_query($mysqli_link, $stuSql)) {
+            echo "New record created successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($mysqli_link);
+        }
+        
+
+    ?>
     <script src="script/script.js"></script>
 </body>
 </html>
