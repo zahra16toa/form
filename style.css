@@ -159,7 +159,15 @@ button{
     outline: none;
     border: none;
     cursor: pointer;
-    margin: 10px 40%;
+    margin: 10px 1%;
+}
+button[type='reset']{
+    background-color: #fff;
+    border: 1px solid var(--blue);
+    color: var(--blue);
+}
+button[type='reset']:hover{
+    border: 2px solid var(--blue);
 }
 button:hover{
     -webkit-transform: translateY(-5px);
@@ -318,6 +326,13 @@ form > div:nth-child(12){
     grid-template-columns: repeat(auto-fit, 75px);
     gap: 10px;
  }
+ body > form > div:nth-child(13){
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+ }
+
 /* media queries */
 @media (max-width: 700px) {
     .form-title{

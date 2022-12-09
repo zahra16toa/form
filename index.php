@@ -223,9 +223,10 @@ require_once 'query/connection.php';
             <label for="">:نوع محل کارآموزی</label>
         </span>
     </div>
-
+    <div>
         <button type="submit">ایجاد فرم</button>
-
+        <button type="reset">پاکسازی</button>
+    </div>
     </form>
     <script src="script/script.js"></script>
     <script>
