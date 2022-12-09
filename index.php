@@ -237,7 +237,7 @@ require_once 'query/connection.php';
         }
         function isLetter(evt) {
             let charCode = (evt.which) ? evt.which : event.keyCode;
-            if( charCode > 31 && (charCode < 31 || charCode > 128 )){
+            if( charCode > 31 && (charCode < 31 || charCode > 128 ) || charCode == 32 ){
                 return true;
             }
                 return false;
