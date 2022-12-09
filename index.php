@@ -1,3 +1,6 @@
+<?php
+require_once 'query/connection.php';
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -114,11 +117,11 @@
                 <label class="input-label" for="">نام پدر</label>
             </div>
             <div class="input-box">
-                <input type="text" onkeypress="return isLetter(event);" class="text-input min-input" name="" id="" required>
+                <input type="text" onkeypress="return isLetter(event);" class="text-input min-input" name="city" id="" required>
                 <label class="input-label" for="">صادره از</label>
             </div>
             <div class="input-box">
-                <input type="text" maxlength="4" onkeypress="return isNumber(event);" class="text-input min-input" name="" id="" required>
+                <input type="text" maxlength="4" onkeypress="return isNumber(event);" class="text-input min-input" name="birth" id="" required>
                 <label class="input-label" for="">متولد</label>
             </div>
     </span>
@@ -209,13 +212,13 @@
     <div>
         <span class="input-form">
             <label for="more"> سایر
-                <input type="checkbox" name="" id="more">
+                <input type="checkbox" name="internType" id="more">
             </label>
             <label for="industrial"> صنعتی
-                <input type="checkbox" name="" id="industrial">
+                <input type="checkbox" name="internType" id="industrial">
             </label>
             <label for="service"> خدماتی
-                <input type="checkbox" name="" id="service">
+                <input type="checkbox" name="internType" id="service">
             </label>
             <label for="">:نوع محل کارآموزی</label>
         </span>
