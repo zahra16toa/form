@@ -138,8 +138,8 @@ require_once 'query/connection.php';
     <span class="input-form">
         <div class="input-box">
             <label class="input-label" id="year" for="">نیمسال کارآموزی</label>
-            <select class="term" name="" id=""><option value="بهمن 4002">بهمن 4002</option>
-                <option value="بهمن 4002">تابستان 4002</option></select>
+            <select class="term" name="yearOfInternship" id=""><option text="بهمن 4002" value="بهمن 4002">بهمن 4002</option>
+                <option text="تابستان 4002" value="تابستان 4002">تابستان 4002</option></select>
         </div>
         <div class="input-box">
             <input type="text" onkeypress="return isLetter(event);" class="text-input min-input" name="professorName" id="" required>
@@ -212,13 +212,13 @@ require_once 'query/connection.php';
     <div>
         <span class="input-form">
             <label for="more"> سایر
-                <input type="checkbox" name="internType" id="more">
+                <input type="checkbox" name="internType" value="سایر" id="more">
             </label>
             <label for="industrial"> صنعتی
-                <input type="checkbox" name="internType" id="industrial">
+                <input type="checkbox" name="internType" value="صنعتی" id="industrial">
             </label>
             <label for="service"> خدماتی
-                <input type="checkbox" name="internType" id="service">
+                <input type="checkbox" name="internType" value="خدماتی" id="service">
             </label>
             <label for="">:نوع محل کارآموزی</label>
         </span>

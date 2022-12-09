@@ -30,11 +30,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $grade1 = test_input($_POST["grade1"]);
   $grade2 = test_input($_POST["grade2"]);
   $gradeInput = test_input($_POST["gradeInput"]);
+  $yearOfInternship = test_input($_POST["yearOfInternship"]);
     /* professor table */
   $professor = test_input($_POST["professorName"]);
 
     /* branch table */
-
+  $internshipNumber = test_input($_POST["learningWork"]);
   $hourCount = test_input($_POST["hour"]);
   $branch = test_input($_POST["branch"]);
   $unitCount = test_input($_POST["unit"]);
@@ -119,14 +120,16 @@ function test_input($data) {
         <p>مدیر ارتباط با صنعت</p>
     </div>
     <?php 
-
-        $studentQuery = "INSERT INTO studentTable(Fname,Lname,studentId,birthYear,city,fatherName,yearOfUni,tel,idNumber,grade) 
-        VALUES('$fName','$lName','$stuId','$birth','$city','$father','$yearOfUni','$stuTel','$nationalId','$sqlGrade')";
+        if($branch != 'مهندسی علوم دامی' && $branch != 'مهندسی صنایع غذایی'){
+            $internshipNumber = null;
+        }
+        $studentQuery = "INSERT INTO studentTable(Fname,Lname,studentId,birthYear,city,fatherName,yearOfUni,tel,idNumber,grade,yearOfInternship) 
+        VALUES('$fName','$lName','$stuId','$birth','$city','$father','$yearOfUni','$stuTel','$nationalId','$sqlGrade','$yearOfInternship')";
         $professorQuery = "INSERT INTO professorTable(professorName) VALUES('$professor')";
         $internshipQuery = "INSERT INTO internship_table(name,internPlace,internTel,internType,Address,management) 
         VALUES('$comName','$companyType','$companyTel','$internType','$Address','$management')";
         $branchQuery = "INSERT INTO branchTable(branchName,internshipBranch,unitCount,hourCount) 
-        VALUES('$branch','','$unitCount','$hourCount')";
+        VALUES('$branch','$internshipNumber','$unitCount','$hourCount')";
 
         $stuSql = mysqli_query($mysqli_link, $studentQuery);
         $proSql = mysqli_query($mysqli_link, $professorQuery);
