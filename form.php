@@ -126,10 +126,10 @@ function test_input($data) {
         if($branch != 'مهندسی علوم دامی' && $branch != 'مهندسی صنایع غذایی'){
             $internshipNumber = null;
         }
-        $studentQuery = "INSERT INTO studentTable(Fname,Lname,studentId,birthYear,city,fatherName,yearOfUni,tel,idNumber,grade,yearOfInternship) 
-        VALUES('$fName','$lName','$stuId','$birth','$city','$father','$yearOfUni','$stuTel','$nationalId','$sqlGrade','$yearOfInternship')";
+        $studentQuery = "INSERT INTO studentTable(Fname,Lname,studentId,birthYear,city,fatherName,yearOfUni,tel,idNumber,grade,yearOfInternship,branchName,internName,professorName) 
+        VALUES('$fName','$lName','$stuId','$birth','$city','$father','$yearOfUni','$stuTel','$nationalId','$sqlGrade','$yearOfInternship','$branch','$comName','$professor')";
         $professorQuery = "INSERT INTO professorTable(professorName) VALUES('$professor')";
-        $internshipQuery = "INSERT INTO internship_table(name,internPlace,internTel,internType,Address,management) 
+        $internshipQuery = "INSERT INTO internship_table(internName,internPlace,internTel,internType,Address,management) 
         VALUES('$comName','$companyType','$companyTel','$internType','$Address','$management')";
         $branchQuery = "INSERT INTO branchTable(branchName,internshipBranch,unitCount,hourCount) 
         VALUES('$branch','$internshipNumber','$unitCount','$hourCount')";
