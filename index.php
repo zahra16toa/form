@@ -17,15 +17,15 @@ require_once 'query/connection.php';
     </div>
     <form action="form.php" method="POST" class="register-form">
         <div class="input-box">
-            <input type="text" onkeypress="return isLetter(event);" name="fName" class="text-input" id="" required>
+            <input type="text" tabIndex="1" onkeypress="return isLetter(event);" name="fName" class="text-input" id="" required>
             <label class="input-label" for="name">(الزامی)نام</label>
         </div>
         <div class="input-box">
-            <input type="text" onkeypress="return isLetter(event);" name="lName" class="text-input" id="" required>
+            <input type="text" tabIndex="2" onkeypress="return isLetter(event);" name="lName" class="text-input" id="" required>
             <label class="input-label" for="l-name">(الزامی)نام خانوادگی</label>
         </div>
         <div class="input-box">
-            <input type="text" onkeypress="return isNumber(event);" name="studentId" maxlength="9" class="text-input" id="studentId" required>
+            <input type="text" tabIndex="3" onkeypress="return isNumber(event);" name="studentId" maxlength="9" class="text-input" id="studentId" required>
             <label class="input-label"  for="student-id">(الزامی)شماره دانشجویی</label>
         </div>
         <div class="select-group">
@@ -38,9 +38,9 @@ require_once 'query/connection.php';
             <fieldset class="branch">
                 <legend>رشته</legend> -->
                 <div>
-                <select name="branch" id="reshte"></select>
+                <select name="branch" tabIndex="4" id="reshte"></select>
                     <div class="learningWork">
-                        <select name="learningWork" id="Lw" style="padding-right: 45px"></select>
+                        <select tabIndex="5" name="learningWork" id="Lw" style="padding-right: 45px"></select>
                         <label class="learning-work-label" for="">کارآموزی:</label>
                     </div>
                 </div>
@@ -109,62 +109,62 @@ require_once 'query/connection.php';
         
     <span class="input-form">
             <div class="input-box">
-                <input type="text" maxlength="4" onkeypress="return isNumber(event);" class="text-input min-input" name="yearOfUni" id="" required>
+                <input type="text" tabIndex="9" maxlength="4" onkeypress="return isNumber(event);" class="text-input min-input" name="yearOfUni" id="" required>
                 <label class="input-label" for="">ورودی</label>
             </div>
             <div class="input-box">
-                <input type="text" onkeypress="return isLetter(event);" class="text-input min-input" name="fatherName" id="" required>
+                <input type="text" tabIndex="8" onkeypress="return isLetter(event);" class="text-input min-input" name="fatherName" id="" required>
                 <label class="input-label" for="">نام پدر</label>
             </div>
             <div class="input-box">
-                <input type="text" onkeypress="return isLetter(event);" class="text-input min-input" name="city" id="" required>
+                <input type="text" tabIndex="7" onkeypress="return isLetter(event);" class="text-input min-input" name="city" id="" required>
                 <label class="input-label" for="">صادره از</label>
             </div>
             <div class="input-box">
-                <input type="text" maxlength="4" onkeypress="return isNumber(event);" class="text-input min-input" name="birth" id="" required>
+                <input type="text" maxlength="4" tabIndex="6" onkeypress="return isNumber(event);" class="text-input min-input" name="birth" id="" required>
                 <label class="input-label" for="">متولد</label>
             </div>
     </span>
     <span class="input-form">
         <div class="input-box">
-            <input type="text" maxlength="10" onkeypress="return isNumber(event);" style="width: 99.5%" class="text-input min-input" name="nationalId" id="" required>
+            <input type="text" maxlength="10" tabIndex="11" onkeypress="return isNumber(event);" style="width: 99.5%" class="text-input min-input" name="nationalId" id="" required>
             <label class="input-label" for="">شماره شناسنامه</label>
         </div>
         <div class="input-box">
-            <input type="text" class="text-input min-input" maxlength="11" onkeypress="return isNumber(event);" name="studentTel" id="" required >
+            <input type="text" class="text-input min-input" tabIndex="10" maxlength="11" onkeypress="return isNumber(event);" name="studentTel" id="" required >
             <label class="input-label tel" for="">شماره تماس دانشجو</label>
         </div>
     </span>
     <span class="input-form">
         <div class="input-box">
             <label class="input-label" id="year" for="">نیمسال کارآموزی</label>
-            <select class="term" name="yearOfInternship" id=""><option text="بهمن 4002" value="بهمن 4002">بهمن 4002</option>
+            <select class="term" tabIndex="13" name="yearOfInternship" id=""><option text="بهمن 4002" value="بهمن 4002">بهمن 4002</option>
                 <option text="تابستان 4002" value="تابستان 4002">تابستان 4002</option></select>
         </div>
         <div class="input-box">
-            <input type="text" onkeypress="return isLetter(event);" class="text-input min-input" name="professorName" id="" required>
+            <input type="text" tabIndex="12" onkeypress="return isLetter(event);" class="text-input min-input" name="professorName" id="" required>
             <label class="input-label" for="">نام استاد</label>
         </div>
     </span>
     <span class="input-form">
         <div class="input-box">
-            <input type="text" class="text-input" maxlength="11" onkeypress="return isNumber(event);" name="companyTel" id="" required >
+            <input type="text" tabIndex="15" class="text-input" maxlength="11" onkeypress="return isNumber(event);" name="companyTel" id="" required >
             <label class="input-label tel" for="">تلفن شرکت</label>
         </div>
          <div class="input-box">
-            <input type="text" onkeypress="return isLetter(event);" class="text-input min-input" maxlength="50" name="companyManagement" id="" required >
+            <input type="text" tabIndex="14" onkeypress="return isLetter(event);" class="text-input min-input" maxlength="50" name="companyManagement" id="" required >
             <label class="input-label tel" for="">مدیریت</label>
         </div>
     </span>
     <span class="input-form">
         <div class="input-box">
-            <input type="text" onkeypress="return isLetter(event);" class="text-input" name="companyName" id="companyName" required>
+            <input type="text" tabIndex="16" onkeypress="return isLetter(event);" class="text-input" name="companyName" id="companyName" required>
             <label class="input-label company" for=""> نام شرکت / کارخانه / موسسه / اداره / بانک / سازمان</label>
         </div>
     </span>
     <span class="input-form">
         <div class="input-box">
-            <input type="text" class="text-input" onkeypress="return isLetter(event);" style="height: 40px" name="address" id="" required>
+            <input type="text" tabIndex="17" class="text-input" onkeypress="return isLetter(event);" style="height: 40px" name="address" id="" required>
             <label class="input-label" for="">نشانی</label>
         </div>
     </span>
