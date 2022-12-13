@@ -10,7 +10,7 @@ require_once 'query/connection.php';
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
 </head>
-<body>
+<body onload="generate()">
 
 <!-- Captcha error message -->
  <?php if(!empty($captchaError)) {?>

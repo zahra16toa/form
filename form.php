@@ -72,9 +72,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       );
     }
     for ($j=1; $j <= 200; $j++) { 
-        $number = createNumber($j);
+        
     }
-
   
 }
 function test_input($data) {
@@ -96,7 +95,7 @@ function fa_number($number)
 <div class="head">
         <div class="date">
             <p><?php echo jdate("Y/m/d"); ?> :تاریخ نامه</p>
-            <p><?php echo('م/الف/'. jdate("Ymd") .fa_number($number)); 
+            <p><?php checkDataBase(); echo('م/الف/'. jdate("Ymd") .fa_number($number)); 
             $day = jdate("d");
             
             ?> :شماره نامه</p>
@@ -179,16 +178,20 @@ function fa_number($number)
         $proSql = mysqli_query($mysqli_link, $professorQuery);
         $internSql = mysqli_query($mysqli_link, $internshipQuery);
         $branchSql = mysqli_query($mysqli_link, $branchQuery);
-        if (mysqli_query($mysqli_link, $stuSql)) {
-            echo "New record created successfully";
-            if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                for ($i=0; $i <= 200 ; $i++) { 
-                    
+        $chckDb = mysqli_query($mysqli_link, $stuSql);
+        
+        function checkDataBase(){
+            for ($i=1; $i <= 200 ; $i++) { 
+                if ($chckDb) {
+                    echo "New record created successfully";
+                    $number = createNumber($i);
+                        
+                } else {
+                    echo "Error: " . $sql . "<br>" . mysqli_error($mysqli_link);
+                    break;
                 }
-            }
-            
-        } else {
-            echo "Error: " . $sql . "<br>" . mysqli_error($mysqli_link);
+            } 
+            return $number;
         }
         function createNumber($i){
             $number = 0;
