@@ -1,5 +1,6 @@
 <?php
 require_once 'query/connection.php';
+require_once 'date/jdf.php';
 ?>
 <html lang="en">
 <head>
@@ -23,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $stuId = test_input($_POST["studentId"]);
   $birth = test_input($_POST["birth"]);
   $city = test_input($_POST["city"]);
-  $father = test_input($_POST["fatherName"]);
+  $email = test_input($_POST["email"]);
   $yearOfUni = test_input($_POST["yearOfUni"]);
   $stuTel = test_input($_POST["studentTel"]);
   $nationalId = test_input($_POST["nationalId"]);
@@ -47,6 +48,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $internType = test_input($_POST["internType"]);
   $Address = test_input($_POST["address"]);
   $management = test_input($_POST["companyManagement"]);
+
+    /* captcha codes */
+    $captcha = $_POST["captcha"];
+
+    $captchaUser = filter_var($_POST["captcha"], FILTER_SANITIZE_STRING);
+
+    if(empty($captcha)) {
+      $captchaError = array(
+        "status" => "alert-danger",
+        "message" => "Please enter the captcha."
+      );
+    }
+    else if($_SESSION['CAPTCHA_CODE'] == $captchaUser){
+      $captchaError = array(
+        "status" => "alert-success",
+        "message" => "Your form has been submitted successfuly."
+      );
+    } else {
+      $captchaError = array(
+        "status" => "alert-danger",
+        "message" => "Captcha is invalid."
+      );
+    }
+
+    $number = createNumber($i++);
+
+  
 }
 function test_input($data) {
     $data = trim($data);
@@ -54,13 +82,21 @@ function test_input($data) {
     $data = htmlspecialchars($data);
     return $data;
 }
-
+function fa_number($number)
+{
+   if(!is_numeric($number) || empty($number))
+   return '۰';
+   $en = array("0","1","2","3","4","5","6","7","8","9");
+   $fa = array("۰","۱","۲","۳","۴","۵","۶","۷","۸","۹");
+   return str_replace($en, $fa, $number);
+}
 ?>
 
 <div class="head">
         <div class="date">
-            <p> :تاریخ نامه</p>
-            <p> :شماره نامه</p>
+            <p><?php echo jdate("Y/m/d"); ?> :تاریخ نامه</p>
+            <p><?php echo('م/الف/'. jdate("Ymd") .fa_number($number)); 
+            ?> :شماره نامه</p>
         </div>
         <div class="logo">
             <img src="img/download1.png" width="45px" alt="">
@@ -100,7 +136,7 @@ function test_input($data) {
                 echo($gradeInput);
             }
             ?> </strong>
-             رشته <strong><?php echo($branch); ?></strong> به شماره دانشجویی <strong><?php echo($stuId); ?></strong>
+             رشته <strong><?php echo($branch); ?></strong> به شماره دانشجویی <strong><?php echo(fa_number($stuId)); ?></strong>
             را جهت گذراندن یک دوره کارآموزی به مدت  ساعت معرفی می نمائید.
                 <p>ضمنا استاد کارآموزی ایشان دکتر <strong><?php echo($professor); ?></strong> می باشد. 
                 خوهشمند است دستور فرمائید ضمن اقدامات لازم به منظور شروع کارآموزی نام برده نسبت به تعیین سرپرست کارآموزی اقدام مقتضی
@@ -121,13 +157,15 @@ function test_input($data) {
         <p>مدیر ارتباط با صنعت</p>
     </div>
     <button onclick="window.print()">پرینت</button>
-
+    <?php
+ 
+?>
     <?php 
-        if($branch != 'مهندسی علوم دامی' && $branch != 'مهندسی صنایع غذایی'){
+        if($branch != 'مهندسی علوم دامی' && $branch != 'مهندسی صنایع غذایی' && $branch != 'مهندسی عمران'){
             $internshipNumber = null;
         }
-        $studentQuery = "INSERT INTO studentTable(Fname,Lname,studentId,birthYear,city,fatherName,yearOfUni,tel,idNumber,grade,yearOfInternship,branchName,internName,professorName) 
-        VALUES('$fName','$lName','$stuId','$birth','$city','$father','$yearOfUni','$stuTel','$nationalId','$sqlGrade','$yearOfInternship','$branch','$comName','$professor')";
+        $studentQuery = "INSERT INTO studentTable(Fname,Lname,studentId,birthYear,city,email,yearOfUni,tel,idNumber,grade,yearOfInternship,branchName,internName,professorName) 
+        VALUES('$fName','$lName','$stuId','$birth','$city','$email','$yearOfUni','$stuTel','$nationalId','$sqlGrade','$yearOfInternship','$branch','$comName','$professor')";
         $professorQuery = "INSERT INTO professorTable(professorName) VALUES('$professor')";
         $internshipQuery = "INSERT INTO internship_table(internName,internPlace,internTel,internType,Address,management) 
         VALUES('$comName','$companyType','$companyTel','$internType','$Address','$management')";
@@ -140,11 +178,26 @@ function test_input($data) {
         $branchSql = mysqli_query($mysqli_link, $branchQuery);
         if (mysqli_query($mysqli_link, $stuSql)) {
             echo "New record created successfully";
+            if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                for ($i=0; $i <= 200 ; $i++) { 
+                    
+                }
+            }
+            
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($mysqli_link);
         }
-        
-
+        function createNumber($i){
+            $number = 0;
+            if($i < 10){
+                $number = 0 . 0 . $i;
+            } else if($i >= 10){
+                $number = 0 . $i;
+            } else {
+                $number = $i;
+            }
+            return $number;
+        }
     ?>
 
     <script src="script/script.js"></script>
