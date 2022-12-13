@@ -15,7 +15,7 @@ require_once 'date/jdf.php';
     <?php
     // define variables and set to empty value
 $name = $lName = $stuId = $hourCount = $professor = $branch = $grade = $grade1 = $comName = $companyType = $grade2 = $sqlGrade = "";
-
+$i = 0;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     /* student table */
   $name = test_input($_POST["fName"] . " " . $_POST["lName"]);
@@ -71,8 +71,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         "message" => "Captcha is invalid."
       );
     }
-
-    $number = createNumber($i++);
+    for ($j=1; $j <= 200; $j++) { 
+        $number = createNumber($j);
+    }
 
   
 }
@@ -96,6 +97,8 @@ function fa_number($number)
         <div class="date">
             <p><?php echo jdate("Y/m/d"); ?> :تاریخ نامه</p>
             <p><?php echo('م/الف/'. jdate("Ymd") .fa_number($number)); 
+            $day = jdate("d");
+            
             ?> :شماره نامه</p>
         </div>
         <div class="logo">
@@ -191,7 +194,7 @@ function fa_number($number)
             $number = 0;
             if($i < 10){
                 $number = 0 . 0 . $i;
-            } else if($i >= 10){
+            } else if($i >= 10 && $i <= 99){
                 $number = 0 . $i;
             } else {
                 $number = $i;
