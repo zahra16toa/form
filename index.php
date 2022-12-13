@@ -12,21 +12,29 @@ require_once 'query/connection.php';
 </head>
 <body>
 
+<!-- Captcha error message -->
+ <?php if(!empty($captchaError)) {?>
+  <div class="form-group col-12 text-center">
+    <div class="alert text-center <?php echo $captchaError['status']; ?>">
+      <?php echo $captchaError['message']; ?>
+    </div>
+  </div>
+<?php }?>
     <div class="form-title">
         <p class="big-form-title">فرم کارآموزی</p>
     </div>
     <form action="form.php" method="POST" class="register-form">
         <div class="input-box">
             <input type="text" tabIndex="1" onkeypress="return isLetter(event);" name="fName" class="text-input" id="" required>
-            <label class="input-label" for="name">(الزامی)نام</label>
+            <label class="input-label" for="name">نام</label>
         </div>
         <div class="input-box">
             <input type="text" tabIndex="2" onkeypress="return isLetter(event);" name="lName" class="text-input" id="" required>
-            <label class="input-label" for="l-name">(الزامی)نام خانوادگی</label>
+            <label class="input-label" for="l-name">نام خانوادگی</label>
         </div>
         <div class="input-box">
             <input type="text" tabIndex="3" onkeypress="return isNumber(event);" name="studentId" maxlength="9" class="text-input" id="studentId" required>
-            <label class="input-label"  for="student-id">(الزامی)شماره دانشجویی</label>
+            <label class="input-label"  for="student-id">شماره دانشجویی</label>
         </div>
         <div class="select-group">
             <fieldset>
@@ -40,7 +48,7 @@ require_once 'query/connection.php';
                 <div>
                 <select name="branch" tabIndex="4" id="reshte"></select>
                     <div class="learningWork">
-                        <select tabIndex="5" name="learningWork" id="Lw" style="padding-right: 45px"></select>
+                        <select tabIndex="5" name="learningWork" id="Lw" style="padding-right: 45px" disabled></select>
                         <label class="learning-work-label" for="">کارآموزی:</label>
                     </div>
                 </div>
@@ -113,8 +121,8 @@ require_once 'query/connection.php';
                 <label class="input-label" for="">ورودی</label>
             </div>
             <div class="input-box">
-                <input type="text" tabIndex="8" onkeypress="return isLetter(event);" class="text-input min-input" name="fatherName" id="" required>
-                <label class="input-label" for="">نام پدر</label>
+                <input type="email" tabIndex="8" onkeypress="" class="text-input min-input" name="email" id="" required>
+                <label class="input-label" for="">ایمیل</label>
             </div>
             <div class="input-box">
                 <input type="text" tabIndex="7" onkeypress="return isLetter(event);" class="text-input min-input" name="city" id="" required>
@@ -128,46 +136,25 @@ require_once 'query/connection.php';
     <span class="input-form">
         <div class="input-box">
             <input type="text" maxlength="10" tabIndex="11" onkeypress="return isNumber(event);" style="width: 99.5%" class="text-input min-input" name="nationalId" id="" required>
-            <label class="input-label" for="">شماره شناسنامه</label>
+            <label class="input-label" for="">کدملی</label>
         </div>
         <div class="input-box">
             <input type="text" class="text-input min-input" tabIndex="10" maxlength="11" onkeypress="return isNumber(event);" name="studentTel" id="" required >
-            <label class="input-label tel" for="">شماره تماس دانشجو</label>
+            <label class="input-label tel" for="">موبایل</label>
         </div>
     </span>
     <span class="input-form">
         <div class="input-box">
-            <label class="input-label" id="year" for="">نیمسال کارآموزی</label>
+            <label class="input-label" id="year" for="">نیمسال اخذ کارآموزی</label>
             <select class="term" tabIndex="13" name="yearOfInternship" id=""><option text="بهمن 4002" value="بهمن 4002">بهمن 4002</option>
-                <option text="تابستان 4002" value="تابستان 4002">تابستان 4002</option></select>
+                <option text="تابستان 4002" value="تابستان 4002">تابستان 4003</option></select>
         </div>
         <div class="input-box">
             <input type="text" tabIndex="12" onkeypress="return isLetter(event);" class="text-input min-input" name="professorName" id="" required>
             <label class="input-label" for="">نام استاد</label>
         </div>
     </span>
-    <span class="input-form">
-        <div class="input-box">
-            <input type="text" tabIndex="15" class="text-input" maxlength="11" onkeypress="return isNumber(event);" name="companyTel" id="" required >
-            <label class="input-label tel" for="">تلفن شرکت</label>
-        </div>
-         <div class="input-box">
-            <input type="text" tabIndex="14" onkeypress="return isLetter(event);" class="text-input min-input" maxlength="50" name="companyManagement" id="" required >
-            <label class="input-label tel" for="">مدیریت</label>
-        </div>
-    </span>
-    <span class="input-form">
-        <div class="input-box">
-            <input type="text" tabIndex="16" onkeypress="return isLetter(event);" class="text-input" name="companyName" id="companyName" required>
-            <label class="input-label company" for=""> نام شرکت / کارخانه / موسسه / اداره / بانک / سازمان</label>
-        </div>
-    </span>
-    <span class="input-form">
-        <div class="input-box">
-            <input type="text" tabIndex="17" class="text-input" onkeypress="return isLetter(event);" style="height: 40px" name="address" id="" required>
-            <label class="input-label" for="">نشانی</label>
-        </div>
-    </span>
+    
     <div>
         <span class="input-form">
         <span class="radio-span">
@@ -206,9 +193,15 @@ require_once 'query/connection.php';
             </label>
         </span>
        
-            <label class="input-label place" id="unitLabel" for="">:محل کارآموزی</label>
+            <label class="input-label place" id="unitLabel" for="">:نوع محل کارآموزی</label>
         </span>
     </div>
+    <span class="input-form">
+        <div class="input-box">
+            <input type="text" tabIndex="16" onkeypress="return isLetter(event);" class="text-input" name="companyName" id="companyName" required>
+            <label class="input-label company" for=""> نام شرکت / کارخانه / موسسه / اداره / بانک / سازمان</label>
+        </div>
+    </span>
     <div>
         <span class="input-form">
             <label for="more"> سایر
@@ -220,31 +213,51 @@ require_once 'query/connection.php';
             <label for="service"> خدماتی
                 <input type="checkbox" name="internType" value="خدماتی" id="service">
             </label>
-            <label for="">:نوع محل کارآموزی</label>
+            <label for="">:نوع کارآموزی</label>
         </span>
     </div>
+    <span class="input-form">
+        <div class="input-box">
+            <input type="text" tabIndex="15" class="text-input" maxlength="11" onkeypress="return isNumber(event);" name="companyTel" id="" required >
+            <label class="input-label tel" for="">تلفن محل کارآموزی</label>
+        </div>
+         <div class="input-box">
+            <input type="text" tabIndex="14" onkeypress="return isLetter(event);" class="text-input min-input" maxlength="50" name="companyManagement" id="" required >
+            <label class="input-label tel" for="">مدیریت</label>
+        </div>
+    </span>
+    <span class="input-form">
+        <div class="input-box">
+            <input type="text" tabIndex="17" class="text-input" onkeypress="return isLetter(event);" style="height: 40px" name="address" id="" required>
+            <label class="input-label" for="">نشانی</label>
+        </div>
+    </span>
+    
+    
     <div>
-        <button type="submit">ایجاد فرم</button>
-        <button type="reset">پاکسازی</button>
+        
+        <div>
+            <img src="generatecaptcha.php?rand=<?php echo rand(); ?>" id="image_captcha" alt="PHP Captcha">
+            <a href="javascript: refreshing_captcha();">7<i class=""></i></a>
+            <script type="text/javascript">
+                function refreshing_captcha() {
+                    let img = document.images['image_captcha'];
+                    img.src = img.src.substring(0, img.src.lastIndexOf("?"))+"?rand="+Math.random()*1000;
+                }
+
+            </script>
+            <div class="input-box">
+                <input type="text" class="text-input" name="captcha" id="">
+                <label class="input-label">کد داخل کادر را وارد کنید</label>
+            </div>  
+        </div>
+        <div>
+            <button type="submit">ایجاد فرم</button>
+            <button type="reset">پاکسازی</button>
+        </div>
     </div>
     </form>
     <script src="script/script.js"></script>
-    <script>
-        function isNumber(evt) {
-            let charCode = (evt.which) ? evt.which : event.keyCode;
-            if (charCode > 31 && (charCode < 48 || charCode > 57 ) )
-                return false;
-            return true;
-        }
-        function isLetter(evt) {
-            let charCode = (evt.which) ? evt.which : event.keyCode;
-            if( charCode > 31 && (charCode < 31 || charCode > 128 ) || charCode == 32 ){
-                return true;
-            }
-                return false;
-            
-        }
-    </script>
     <!-- <script src="script/farsiType.js"></script> -->
 </body>
 </html>
