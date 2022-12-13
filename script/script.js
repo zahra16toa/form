@@ -10,7 +10,7 @@ const reshte = document.getElementById("reshte").options;
 const reshteSelect = document.querySelector("#reshte");
 const unit = document.querySelector("#unit");
 const inputLabel = document.querySelectorAll(".input-label");
-const textInput = document.querySelectorAll(".text-input")
+const textInput = document.querySelectorAll(".text-input");
 const peyvasteLabel = document.querySelector(".peyvaste");
 const napeyvasteLabel = document.querySelector(".napeyvaste");
 const karshenasiLabel = document.querySelector(".karshenasi");
@@ -49,7 +49,11 @@ const reshteha = [
     {index: 15, text: "برق", value: "برق"},
     {index: 16, text: "میکروبیولوژی", value: "میکروبیولوژی", hour: "240"},
     {index: 17, text: "مهندسی علوم دامی", value: "مهندسی علوم دامی"},
-    {index: 18, text: "مهندسی حرفه ای الکترونیک", value: "مهندسی حرفه ای الکترونیک", hour: "240"}
+    {index: 18, text: "مهندسی حرفه ای الکترونیک", value: "مهندسی حرفه ای الکترونیک", hour: "240"},
+    {index: 19, text: "ارتباط تصویری", value: "ارتباط تصویری", hour: "240"},
+    {index: 20, text: "فتوگرافیک", value: "فتوگرافیک", hour: "240"}
+
+
 ]
 const nums = [{text: "1", value: "1"},
               {text: "2", value: "2"},
@@ -69,7 +73,8 @@ function fillSelect(){
 function conditions(){
     /* کارشناسی ناپیوسته  */
     if(reshteSelect.value == reshteha[0].text || reshteSelect.value == reshteha[1].text ||
-        reshteSelect.value == reshteha[5].text || reshteSelect.value == reshteha[18].text){
+        reshteSelect.value == reshteha[5].text || reshteSelect.value == reshteha[18].text ||
+        reshteSelect.value == reshteha[19].text){
             peyvaste.classList.remove("show");
             naPeyvaste.classList.remove("show");
             kardani.classList.remove("show");
@@ -89,6 +94,10 @@ function conditions(){
             kardaniPeyvasteRadio.classList.remove("show");
             kardaniNapeyvaste.classList.remove("show");
             kardaniNapeyvasteRadio.classList.remove("show");
+            Lw.disabled = true;
+            Lw.style.cursor= "no-drop";
+            Lw.style.opacity = "50%";
+            removeOptions();
         } else 
         /* کارشناسی پیوسته  */
         
@@ -120,11 +129,15 @@ function conditions(){
             kardaniPeyvasteRadio.classList.remove("show");
             kardaniNapeyvaste.classList.remove("show");
             kardaniNapeyvasteRadio.classList.remove("show");
+            Lw.disabled = true;
+            Lw.style.cursor= "no-drop";
+            Lw.style.opacity = "50%";
+            removeOptions();
         } else 
         /* کاردانی پیوسته  */
     
         if(reshteSelect.value == reshteha[3].text || reshteSelect.value == reshteha[6].text || 
-            reshteSelect.value == reshteha[8].text){
+            reshteSelect.value == reshteha[8].text || reshteSelect.value == reshteha[20].text){
             peyvaste.classList.remove("show");
             naPeyvaste.classList.remove("show");
             kardani.classList.remove("show");
@@ -147,6 +160,10 @@ function conditions(){
             kardaniPeyvasteRadio.classList.remove("show");
             kardaniNapeyvaste.classList.remove("show");
             kardaniNapeyvasteRadio.classList.remove("show");
+            Lw.disabled = true;
+            Lw.style.cursor= "no-drop";
+            Lw.style.opacity = "50%";
+            removeOptions();
         } else 
         /*  کاردانی ناپیوسته  */
         if(reshteSelect.value == reshteha[11].text){
@@ -173,7 +190,10 @@ function conditions(){
             kardaniPeyvasteRadio.classList.remove("show");
             kardaniNapeyvaste.classList.remove("show");
             kardaniNapeyvasteRadio.classList.remove("show");
-
+            Lw.disabled = true;
+            Lw.style.cursor= "no-drop";
+            Lw.style.opacity = "50%";
+            removeOptions();
         } else
         /* کارشناسی ناپیوسته و پیوسته */
         /* مهندسی عمران */
@@ -195,6 +215,12 @@ function conditions(){
             kardaniPeyvasteRadio.classList.remove("show");
             kardaniNapeyvaste.classList.remove("show");
             kardaniNapeyvasteRadio.classList.remove("show");
+            removeOptions();
+            addOption1();
+            Lw.disabled = false;
+            Lw.style.cursor= "pointer";
+            Lw.style.opacity = 1;
+  
         } else 
         /* کاردانی ناپیوسته و پیوسته */
         /* معماری */
@@ -216,6 +242,10 @@ function conditions(){
             kardaniPeyvasteRadio.classList.remove("show");
             kardaniNapeyvaste.classList.remove("show");
             kardaniNapeyvasteRadio.classList.remove("show");
+            Lw.disabled = true;
+            Lw.style.cursor= "no-drop";
+            Lw.style.opacity = "50%";
+            removeOptions();
         } else 
         /* کارشناسی و کاردانی پیوسته و ناپیوسته */
         /* حسابداری */
@@ -238,6 +268,10 @@ function conditions(){
             kardaniNapeyvaste.classList.remove("show");
             kardaniNapeyvasteRadio.classList.remove("show");
             // kardaniPeyvaste.style.zIndex = "1";
+            Lw.disabled = true;
+            Lw.style.cursor= "no-drop";
+            Lw.style.opacity = "50%";
+            removeOptions();
         } else 
         /* کاردانی ناپیوسته و کارشناسی پیوسته و ناپیوسته */
         /* برق */
@@ -267,6 +301,10 @@ function conditions(){
                 peyvasteLabel.classList.add("show");
             })
             gradeParagraph.classList.add("hide");
+            Lw.disabled = true;
+            Lw.style.cursor= "no-drop";
+            Lw.style.opacity = "50%";
+            removeOptions();
 
         } else 
         /* کارآموزی های جداگانه با اضافه شدن فیلد کارآموزی */
@@ -284,7 +322,8 @@ function conditions(){
             kardaniPeyvaste.classList.remove("show");
             kardaniPeyvasteRadio.classList.remove("show");
             Lw.disabled = false;
-
+            Lw.style.cursor= "pointer";
+            Lw.style.opacity = 1;
   
             kardaniNapeyvaste.classList.remove("show");
             kardaniNapeyvasteRadio.classList.remove("show");
@@ -324,7 +363,8 @@ function conditions(){
             kardaniNapeyvasteRadio.classList.remove("show");
             gradeParagraph.classList.remove("hide");
             Lw.disabled = false;
-
+            Lw.style.cursor= "pointer";
+            Lw.style.opacity = 1;
             gradeParagraph.value = "کارشناسی پیوسته";
 
             removeOptions();
@@ -341,7 +381,8 @@ function conditions(){
             reshteSelect.value == reshteha[6].text || reshteSelect.value == reshteha[8].text ||
             reshteSelect.value == reshteha[13].text || reshteSelect.vale == reshteha[14].text ||
             reshteSelect.value == reshteha[16].text || reshteSelect.value == reshteha[7].text ||
-            reshteSelect.value == reshteha[18].text || reshteSelect.value == reshteha[15].text){
+            reshteSelect.value == reshteha[18].text || reshteSelect.value == reshteha[15].text ||
+            reshteSelect.value == reshteha[19].text || reshteSelect.value == reshteha[20].text){
             hour.value = reshteha[3].hour;
         } else
         /* 120 */
@@ -367,7 +408,7 @@ function conditions(){
             reshteSelect.value == reshteha[6].text || reshteSelect.value == reshteha[7].text || reshteSelect.value == reshteha[12].text ||
             reshteSelect.value == reshteha[13].text || reshteSelect.value == reshteha[14].text ||
             reshteSelect.value == reshteha[16].text || reshteSelect.value == reshteha[18].text || reshteSelect.value == reshteha[15].text ||
-            reshteSelect.value == reshteha[8].text){
+            reshteSelect.value == reshteha[8].text || reshteSelect.value == reshteha[19].text || reshteSelect.value == reshteha[20].text){
                 unit.value = 2;
             } else
         /* 3 واحد */
@@ -486,4 +527,27 @@ karshenasi.addEventListener("click", ()=>{
 // });
 /* main */
 fillSelect();
+function isNumber(evt) {
+    let charCode = (evt.which) ? evt.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57 ) ){
+        alert("لطفا عدد وارد کنید");
+        return false;
+    }
+    return true;
+}
+function isLetter(evt) {
+    // textInput.forEach(element =>{
+        let charCode = (evt.which) ? evt.which : event.keyCode;
+    if( charCode > 31 && (charCode < 31 || charCode > 128 ) || charCode == 32 ){
+        return true;
+    }
+    alert("لطفا حروف وارد کنید");
+    return false;
+
+        // element.classList.add("failed");
+    // })
+    
+}
+
+
 // sudentId.attributes.add("onkeypress","return inNumberKey(event)");
