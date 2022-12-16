@@ -27,6 +27,11 @@ const kardaniNapeyvaste = document.querySelector(".kardani-napeyvaste");
 const kardaniNapeyvasteRadio = document.querySelector("#kardaniNapeyvaste");
 const sudentId = document.querySelector("#studentId");
 const formGrade = document.querySelector("#stuGrade");
+const generateFormButton = document.querySelector(".generateForm"); 
+/* captcha selectors */
+const captchaImage = document.querySelector("#image");
+const captchaInput = document.querySelector("#submit");
+
 /* form variables */
 const company = document.querySelector("#company")
 /* objects */
@@ -70,6 +75,59 @@ function fillSelect(){
         )
     );
 }
+/* captcha function */
+
+function generate() {
+    // clear old data
+    captchaInput.value = "";
+    // Access the element to store
+    // the generated captcha
+
+    var uniquechar = "";
+ 
+    const randomchar =
+"ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghjklmnopqrstuvwxyz0123456789";
+ 
+    // Generate captcha for length of
+    // 5 with random character
+    for (let i = 1; i < 5; i++) {
+        uniquechar += randomchar.charAt(Math.random() * randomchar.length)
+    }
+ 
+    // Store generated input
+    captchaImage.innerHTML = uniquechar;
+
+    // styling captcha inputs
+    captchaInput.style.color = "black";
+    captchaInput.style.border= "2px solid var(--blue)";
+
+}
+function printmsg() {
+     
+    // Check whether the input is equal
+    // to generated captcha or not
+    if (captchaInput.value == captchaImage.innerHTML) {
+        // enable generate button
+        generateFormButton.disabled = false;
+        generateFormButton.classList.remove("generateForm");
+        captchaInput.style.color= "green";
+        captchaInput.style.border= "2px solid green";
+    }
+    else if(captchaInput.value == ""){
+        alert("کد داخل کادر را وارد کنید.");
+        generateFormButton.disabled = true;
+        generateFormButton.classList.add("generateForm");
+        generate();
+    } else {
+        generateFormButton.disabled = true;
+        generateFormButton.classList.add("generateForm");
+        alert("کد داخل کادر را درست وارد کنید.");
+        generate();
+    }
+}
+
+
+/* end captcha functions */
 function conditions(){
     /* کارشناسی ناپیوسته  */
     if(reshteSelect.value == reshteha[0].text || reshteSelect.value == reshteha[1].text ||
