@@ -371,6 +371,21 @@ form > div:nth-child(10){
     justify-content: center;
     gap: 5px;
  }
+
+ /* enter codes for styling captcha image */
+ #image{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    background: var(--yellow);
+    font-weight: 400;
+    user-select: none;
+    text-decoration: line-through;
+    font-style: italic;
+    font-size: larger;
+    color: var(--blue);
+ }
 /* media queries */
 @media (max-width: 700px) {
     .form-title{

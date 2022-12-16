@@ -11,15 +11,6 @@ require_once 'query/connection.php';
     <title>Document</title>
 </head>
 <body onload="generate()">
-
-<!-- Captcha error message -->
- <?php if(!empty($captchaError)) {?>
-  <div class="form-group col-12 text-center">
-    <div class="alert text-center <?php echo $captchaError['status']; ?>">
-      <?php echo $captchaError['message']; ?>
-    </div>
-  </div>
-<?php }?>
     <div class="form-title">
         <p class="big-form-title">فرم کارآموزی</p>
     </div>
@@ -237,17 +228,13 @@ require_once 'query/connection.php';
     <div>
         
         <div>
-            <img src="generatecaptcha.php?rand=<?php echo rand(); ?>" id="image_captcha" alt="PHP Captcha">
-            <a href="javascript: refreshing_captcha();">7<i class=""></i></a>
-            <script type="text/javascript">
-                function refreshing_captcha() {
-                    let img = document.images['image_captcha'];
-                    img.src = img.src.substring(0, img.src.lastIndexOf("?"))+"?rand="+Math.random()*1000;
-                }
-
-            </script>
-            <div class="input-box">
-                <input type="text" class="text-input" name="captcha" id="">
+            <div id="image" alt="Captcha"></div>
+            <a href="javascript: generate();"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+  <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+</svg></a>
+            <div class="input-box" id="user-input"> 
+                <input type="text" class="text-input" name="captcha" id="submit">
                 <label class="input-label">کد داخل کادر را وارد کنید</label>
             </div>  
         </div>
@@ -258,6 +245,9 @@ require_once 'query/connection.php';
     </div>
     </form>
     <script src="script/script.js"></script>
+    <script>
+
+    </script>
     <!-- <script src="script/farsiType.js"></script> -->
 </body>
 </html>
