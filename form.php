@@ -1,6 +1,7 @@
 <?php
 require_once 'query/connection.php';
 require_once 'date/jdf.php';
+session_start();
 ?>
 <html lang="en">
 <head>
@@ -49,32 +50,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $Address = test_input($_POST["address"]);
   $management = test_input($_POST["companyManagement"]);
 
-    /* captcha codes */
-    $captcha = $_POST["captcha"];
-
-    $captchaUser = filter_var($_POST["captcha"], FILTER_SANITIZE_STRING);
-
-    if(empty($captcha)) {
-      $captchaError = array(
-        "status" => "alert-danger",
-        "message" => "Please enter the captcha."
-      );
-    }
-    else if($_SESSION['CAPTCHA_CODE'] == $captchaUser){
-      $captchaError = array(
-        "status" => "alert-success",
-        "message" => "Your form has been submitted successfuly."
-      );
-    } else {
-      $captchaError = array(
-        "status" => "alert-danger",
-        "message" => "Captcha is invalid."
-      );
-    }
-    for ($j=1; $j <= 200; $j++) { 
-        
-    }
   
+    
+ 
+}
+function createNumber($counter){
+    if($counter < 10){
+        $number = 0 . 0 . $counter;
+    } else if($counter >= 10 && $counter <= 99){
+        $number = 0 . $counter;
+    } else {
+        $number = $counter;
+    }
+    return $number;
 }
 function test_input($data) {
     $data = trim($data);
@@ -90,15 +78,30 @@ function fa_number($number)
    $fa = array("۰","۱","۲","۳","۴","۵","۶","۷","۸","۹");
    return str_replace($en, $fa, $number);
 }
+
+if(isset($_POST["count"])){
+    if(!($_SESSION['count'])){
+        $_SESSION['count'] = 1;
+    } else {
+        $count = $_SESSION['count'] + 1;
+        $_SESSION['count'] = $count;
+    }
+}
+$day = date("d");
+$tomorrow = strtotime('+1 day', $date);
+$matchDate = date("d", strtotime("day"));
+if($tomorrow == $matchDate || $count == 201){
+    $_SESSION["count"] = 1;
+}
+$showCount = createNumber($_SESSION["count"]);
 ?>
 
 <div class="head">
         <div class="date">
-            <p><?php echo jdate("Y/m/d"); ?> :تاریخ نامه</p>
-            <p><?php checkDataBase(); echo('م/الف/'. jdate("Ymd") .fa_number($number)); 
-            $day = jdate("d");
+            <p>تاریخ نامه: <?php echo jdate("Y/m/d"); ?> </p>
+            <p>شماره نامه: <?php echo(jdate("Ymd") .fa_number($showCount) . '/م/الف'); 
             
-            ?> :شماره نامه</p>
+            ?></p>
         </div>
         <div class="logo">
             <img src="img/download1.png" width="45px" alt="">
@@ -180,30 +183,7 @@ function fa_number($number)
         $branchSql = mysqli_query($mysqli_link, $branchQuery);
         $chckDb = mysqli_query($mysqli_link, $stuSql);
         
-        function checkDataBase(){
-            for ($i=1; $i <= 200 ; $i++) { 
-                if ($chckDb) {
-                    echo "New record created successfully";
-                    $number = createNumber($i);
-                        
-                } else {
-                    echo "Error: " . $sql . "<br>" . mysqli_error($mysqli_link);
-                    break;
-                }
-            } 
-            return $number;
-        }
-        function createNumber($i){
-            $number = 0;
-            if($i < 10){
-                $number = 0 . 0 . $i;
-            } else if($i >= 10 && $i <= 99){
-                $number = 0 . $i;
-            } else {
-                $number = $i;
-            }
-            return $number;
-        }
+        
     ?>
 
     <script src="script/script.js"></script>

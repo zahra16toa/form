@@ -80,7 +80,8 @@ select:focus{
     border: 2px solid var(--blue);
 }
 
-button{
+button,
+.active-button{
     width: 80px;
     height: 47px;
     border-radius: 4px;
@@ -100,7 +101,8 @@ button[type='reset']:hover{
     border: 2px solid var(--blue);
     color: var(--yellow);
 }
-button:hover{
+button:hover,
+.active-button:hover{
     -webkit-transform: translateY(-5px);
     transform: translateY(-5px);
     box-shadow: 0px 3px 7px var(--gray);
@@ -372,9 +374,9 @@ form > div:nth-child(10){
     gap: 5px;
  }
 
- /* enter codes for styling captcha image */
+ /* styling captcha image */
  #image{
-    width: 30%;
+    width: 25%;
     display: flex;
     align-items: center;
     padding: 2px;
@@ -386,6 +388,27 @@ form > div:nth-child(10){
     font-size: larger;
     color: var(--blue);
  }
+/* check captcha  */
+.check-captcha{
+    width: 15%;
+    background-color: var(--blue);
+    color: var(--yellow);
+    cursor: pointer;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 10pt;
+}
+ /* generate button */
+ .generateForm{
+    opacity: 60%;
+    cursor: no-drop;
+ }
+ .generateForm:hover{
+    transform: translateY(0);
+    box-shadow: none;
+    color: #fff;
+ }
+
 /* media queries */
 @media (max-width: 700px) {
     .form-title{
@@ -416,8 +439,10 @@ form > div:nth-child(10){
         font-size: 10;
     }
     .grade{
-        top: 35%;
-        left: 10%;
+        top: 45%;
+        left: -37%;
+        width: 100%;
+        background: transparent;
     }
     .grade-div{
         display: flex;
@@ -447,7 +472,7 @@ form > div:nth-child(10){
 }
 @media (max-width: 420px){
     button{
-        margin-right: 38%;
+        margin-right: 3%;
     }
     select{
         width: 100%;
@@ -456,7 +481,7 @@ form > div:nth-child(10){
         transform: translateY(-76px);
     }
     div.form-title{
-        padding: 10% 36%;
+        padding: 10% 33%;
     }
     .register-form{
         margin: 0;
@@ -492,5 +517,8 @@ form > div:nth-child(10){
     }
     .tel{
         font-size: 6pt;
+    }
+    body > form > div:nth-child(13) > div:nth-child(1){
+
     }
 } 
