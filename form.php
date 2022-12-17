@@ -82,11 +82,13 @@ function fa_number($number)
 if(isset($_POST['count'])){
     if(!($_SESSION['count'])){
         $_SESSION['count'] = 1;
-    } else {
+    } else if($_SESSION['studentId'] != $stuId && $_SESSION['count']){
         $count = $_SESSION['count'] + 1;
         $_SESSION['count'] = $count;
     }
 }
+$_SESSION['studentId'] = $stuId;
+
 
 // set time to add condition for letter number
 $day = date("d");
