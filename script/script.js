@@ -31,7 +31,8 @@ const generateFormButton = document.querySelector(".generateForm");
 /* captcha selectors */
 const captchaImage = document.querySelector("#image");
 const captchaInput = document.querySelector("#submit");
-
+/* email selector */
+const emailInput = document.querySelector("#email");
 /* form variables */
 const company = document.querySelector("#company")
 /* objects */
@@ -599,12 +600,25 @@ function isLetter(evt) {
     if( charCode > 31 && (charCode < 31 || charCode > 128 ) || charCode == 32 ){
         return true;
     }
-    alert("لطفا حروف وارد کنید");
+    alert("لطفا حروف فارسی وارد کنید");
     return false;
 
         // element.classList.add("failed");
     // })
     
+}
+
+function validateEmail() {
+    let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(emailInput.value.match(mailFormat)){
+        emailInput.style.color= "green";
+        emailInput.style.border= "2px solid green";
+        return true;
+    } else {
+        emailInput.style.color= "red";
+        emailInput.style.border= "2px solid red";
+        // return false;
+    }
 }
 
 

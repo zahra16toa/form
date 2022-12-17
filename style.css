@@ -262,7 +262,8 @@ button:hover,
     border-right: 1px solid var(--yellow);
 }
 .text-input:valid,
-.text-input:focus{
+.text-input:focus,
+.text-input:invalid{
     border: 2px solid var(--blue);
 }
 /* labels */
