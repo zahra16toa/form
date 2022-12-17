@@ -78,8 +78,8 @@ function fa_number($number)
    $fa = array("۰","۱","۲","۳","۴","۵","۶","۷","۸","۹");
    return str_replace($en, $fa, $number);
 }
-
-if(isset($_POST["count"])){
+// conditions for set letter number
+if(isset($_POST['count'])){
     if(!($_SESSION['count'])){
         $_SESSION['count'] = 1;
     } else {
@@ -87,6 +87,8 @@ if(isset($_POST["count"])){
         $_SESSION['count'] = $count;
     }
 }
+
+// set time to add condition for letter number
 $day = date("d");
 $tomorrow = strtotime('+1 day', $date);
 $matchDate = date("d", strtotime("day"));
@@ -94,6 +96,7 @@ if($tomorrow == $matchDate || $count == 201){
     $_SESSION["count"] = 1;
 }
 $showCount = createNumber($_SESSION["count"]);
+
 ?>
 
 <div class="head">
