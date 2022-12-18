@@ -91,7 +91,7 @@ function generate() {
  
     // Generate captcha for length of
     // 5 with random character
-    for (let i = 1; i < 5; i++) {
+    for (let i = 1; i <= 4; i++) {
         uniquechar += randomchar.charAt(Math.random() * randomchar.length)
     }
  
@@ -107,28 +107,71 @@ function printmsg() {
      
     // Check whether the input is equal
     // to generated captcha or not
-    if (captchaInput.value == captchaImage.innerHTML) {
+    let captchaCode = captchaImage.innerHTML;
+    if (captchaInput.value.match(captchaCode)) {
         // enable generate button
-        generateFormButton.disabled = false;
-        generateFormButton.classList.remove("generateForm");
         captchaInput.style.color= "green";
         captchaInput.style.border= "2px solid green";
+        generateFormButton.disabled = false;
+        generateFormButton.classList.remove("generateForm");
     }
     else if(captchaInput.value == ""){
-        alert("کد داخل کادر را وارد کنید.");
+        // alert("کد داخل کادر را وارد کنید.");
         generateFormButton.disabled = true;
         generateFormButton.classList.add("generateForm");
-        generate();
+        captchaInput.style.color= "red";
+        captchaInput.style.border= "2px solid red";
+        // generate();
     } else {
         generateFormButton.disabled = true;
         generateFormButton.classList.add("generateForm");
-        alert("کد داخل کادر را درست وارد کنید.");
-        generate();
+        captchaInput.style.color= "red";
+        captchaInput.style.border= "2px solid red";
+        // alert("کد داخل کادر را درست وارد کنید.");
+        // generate();
     }
 }
 
 
 /* end captcha functions */
+
+
+function isNumber(evt) {
+    let charCode = (evt.which) ? evt.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57 ) ){
+        alert("لطفا عدد وارد کنید");
+        return false;
+    }
+    return true;
+}
+function isLetter(evt) {
+    // textInput.forEach(element =>{
+        let charCode = (evt.which) ? evt.which : event.keyCode;
+    if( charCode > 31 && (charCode < 31 || charCode > 128 ) || charCode == 32 ){
+        return true;
+    }
+    alert("لطفا حروف فارسی وارد کنید");
+    return false;
+
+        // element.classList.add("failed");
+    // })
+    
+}
+
+function validateEmail() {
+    let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    if(emailInput.value.match(mailFormat)){
+        emailInput.style.color= "green";
+        emailInput.style.border= "2px solid green";
+        return true;
+    } else {
+        emailInput.style.color= "red";
+        emailInput.style.border= "2px solid red";
+        // return false;
+    }
+}
+
+
 function conditions(){
     /* کارشناسی ناپیوسته  */
     if(reshteSelect.value == reshteha[0].text || reshteSelect.value == reshteha[1].text ||
@@ -586,40 +629,7 @@ karshenasi.addEventListener("click", ()=>{
 // });
 /* main */
 fillSelect();
-function isNumber(evt) {
-    let charCode = (evt.which) ? evt.which : event.keyCode;
-    if (charCode > 31 && (charCode < 48 || charCode > 57 ) ){
-        alert("لطفا عدد وارد کنید");
-        return false;
-    }
-    return true;
-}
-function isLetter(evt) {
-    // textInput.forEach(element =>{
-        let charCode = (evt.which) ? evt.which : event.keyCode;
-    if( charCode > 31 && (charCode < 31 || charCode > 128 ) || charCode == 32 ){
-        return true;
-    }
-    alert("لطفا حروف فارسی وارد کنید");
-    return false;
 
-        // element.classList.add("failed");
-    // })
-    
-}
-
-function validateEmail() {
-    let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if(emailInput.value.match(mailFormat)){
-        emailInput.style.color= "green";
-        emailInput.style.border= "2px solid green";
-        return true;
-    } else {
-        emailInput.style.color= "red";
-        emailInput.style.border= "2px solid red";
-        // return false;
-    }
-}
 
 
 // sudentId.attributes.add("onkeypress","return inNumberKey(event)");

@@ -374,10 +374,16 @@ form > div:nth-child(10){
     justify-content: center;
     gap: 5px;
  }
-
+ body > form > div:nth-child(13) > div:nth-child(1) > div:nth-child(1){
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 40%;
+ }
  /* styling captcha image */
  #image{
-    width: 25%;
+    width: 54%;
     display: flex;
     align-items: center;
     padding: 2px;
@@ -391,13 +397,14 @@ form > div:nth-child(10){
  }
 /* check captcha  */
 .check-captcha{
-    width: 15%;
+    width: 41%;
     background-color: var(--blue);
     color: var(--yellow);
     cursor: pointer;
     border-radius: 5px;
     padding: 5px 10px;
     font-size: 10pt;
+    height: 33px;
 }
  /* generate button */
  .generateForm{
@@ -519,7 +526,7 @@ form > div:nth-child(10){
     .tel{
         font-size: 6pt;
     }
-    body > form > div:nth-child(13) > div:nth-child(1){
-
+    #image{
+        width: 100%;
     }
 } 
