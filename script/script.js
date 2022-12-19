@@ -86,12 +86,11 @@ function generate() {
 
     var uniquechar = "";
  
-    const randomchar =
-"ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghjklmnopqrstuvwxyz0123456789";
+    const randomchar = "ABCDEFGHJKLMNOPQRSTUVWXYZabcdefghjklmnopqrstuvwxyz0123456789";
  
     // Generate captcha for length of
     // 5 with random character
-    for (let i = 1; i <= 4; i++) {
+    for (let i = 1; i <= 5; i++) {
         uniquechar += randomchar.charAt(Math.random() * randomchar.length)
     }
  
@@ -99,8 +98,8 @@ function generate() {
     captchaImage.innerHTML = uniquechar;
 
     // styling captcha inputs
-    captchaInput.style.color = "black";
-    captchaInput.style.border= "2px solid var(--blue)";
+    // captchaInput.style.color = "black";
+    // captchaInput.style.border= "2px solid var(--blue)";
 
 }
 function printmsg() {
@@ -108,25 +107,18 @@ function printmsg() {
     // Check whether the input is equal
     // to generated captcha or not
     let captchaCode = captchaImage.innerHTML;
-    if (captchaInput.value.match(captchaCode)) {
+    if (captchaInput.value == captchaCode) {
         // enable generate button
-        captchaInput.style.color= "green";
-        captchaInput.style.border= "2px solid green";
+        captchaInput.classList.add("valid");
+        captchaInput.classList.remove("invalid");
         generateFormButton.disabled = false;
         generateFormButton.classList.remove("generateForm");
-    }
-    else if(captchaInput.value == ""){
-        // alert("کد داخل کادر را وارد کنید.");
-        generateFormButton.disabled = true;
-        generateFormButton.classList.add("generateForm");
-        captchaInput.style.color= "red";
-        captchaInput.style.border= "2px solid red";
-        // generate();
     } else {
         generateFormButton.disabled = true;
         generateFormButton.classList.add("generateForm");
-        captchaInput.style.color= "red";
-        captchaInput.style.border= "2px solid red";
+        captchaInput.classList.add("invalid");
+        captchaInput.classList.remove("valid");
+
         // alert("کد داخل کادر را درست وارد کنید.");
         // generate();
     }
@@ -161,12 +153,10 @@ function isLetter(evt) {
 function validateEmail() {
     let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if(emailInput.value.match(mailFormat)){
-        emailInput.style.color= "green";
-        emailInput.style.border= "2px solid green";
+        emailInput.classList.add("valid");
         return true;
     } else {
-        emailInput.style.color= "red";
-        emailInput.style.border= "2px solid red";
+        emailInput.classList.add("invalid");
         // return false;
     }
 }

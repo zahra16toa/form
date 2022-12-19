@@ -10,6 +10,7 @@
     --blue: #1e23bf;
     --gray: #6c757d;
     --red: #ff0000;
+    --green: #008000;
 }
 /* fonts */
 @font-face {
@@ -417,6 +418,15 @@ form > div:nth-child(10){
     color: #fff;
  }
 
+ /* captcha valid style */
+ .valid{
+    color: var(--green);
+    border: 2px solid var(--green) !important;
+ }
+ .invalid{
+    color: var(--red);
+    border: 2px solid var(--red) !important;
+ }
 /* media queries */
 @media (max-width: 700px) {
     .form-title{

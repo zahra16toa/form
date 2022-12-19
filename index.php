@@ -243,6 +243,8 @@ require_once 'query/connection.php';
                 <input type="text" tabIndex="16" onkeypress="javascript: printmsg();" class="text-input" name="captcha" id="submit">
                 <label class="input-label">کد داخل کادر را وارد کنید</label>
             </div>  
+            <!-- recaptcha codes -->
+            <!-- <div class="g-recaptcha" data-sitekey="6LevaI0jAAAAAOBz5oOVAlNspzUj0HCqwraDJ9B8"></div>  -->
             <!-- end captcha textbox -->
         </div>
 
@@ -253,9 +255,15 @@ require_once 'query/connection.php';
     </div>
     </form>
     <script src="script/script.js"></script>
-    <script>
+    <!-- <script src="https://www.google.com/recaptcha/enterprise.js?render=6LevaI0jAAAAAOBz5oOVAlNspzUj0HCqwraDJ9B8"></script>
+<script>
+grecaptcha.enterprise.ready(function() {
+    grecaptcha.enterprise.execute('6LevaI0jAAAAAOBz5oOVAlNspzUj0HCqwraDJ9B8', {action: 'login'}).then(function(token) {
+       ...
+    });
+});
+</script> -->
 
-    </script>
     <!-- <script src="script/farsiType.js"></script> -->
 </body>
 </html>
