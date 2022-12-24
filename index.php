@@ -240,7 +240,7 @@ require_once 'query/connection.php';
             <!-- end captcha tools -->
             <!-- divide of captcha textbox -->
             <div class="input-box" id="user-input"> 
-                <input type="text" tabIndex="16" onkeypress="javascript: printmsg();" class="text-input" name="captcha" id="submit">
+                <input type="text" tabIndex="16" onkeyup="javascript: printmsg();" class="text-input" name="captcha" id="submit">
                 <label class="input-label">کد داخل کادر را وارد کنید</label>
             </div>  
             <!-- recaptcha codes -->

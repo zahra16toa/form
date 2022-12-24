@@ -107,7 +107,7 @@ function printmsg() {
     // Check whether the input is equal
     // to generated captcha or not
     let captchaCode = captchaImage.innerHTML;
-    if (captchaInput.value == captchaCode) {
+    if (captchaInput.value.match(captchaCode)) {
         // enable generate button
         captchaInput.classList.add("valid");
         captchaInput.classList.remove("invalid");
