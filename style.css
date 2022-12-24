@@ -282,7 +282,7 @@ button:hover,
     padding: 0 3px;
     z-index: 2;
 }
-/* radio button styles */
+/* ! radio button styles */
 input[type="radio"]{
     cursor: pointer;
     display: flex;
@@ -334,7 +334,7 @@ form > div:nth-child(10){
     width: 100%;
     position: relative;
  }
- /* spaces for radio buttons in internship */
+ /*? spaces for radio buttons in internship */
  .input-form .radio-span{
     padding-right: 3%;
  }
@@ -356,7 +356,7 @@ form > div:nth-child(10){
     justify-content: center;
  }
 
- /* internship select element */
+ /*! internship select element */
  #Lw{
     opacity: 50%;
     cursor: no-drop;

@@ -154,9 +154,11 @@ function validateEmail() {
     let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if(emailInput.value.match(mailFormat)){
         emailInput.classList.add("valid");
+        emailInput.classList.remove("invalid");
         return true;
     } else {
         emailInput.classList.add("invalid");
+        emailInput.classList.remove("valid");
         // return false;
     }
 }
