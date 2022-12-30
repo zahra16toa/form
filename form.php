@@ -174,8 +174,8 @@ $showCount = createNumber($_SESSION["count"]);
         if($branch != 'مهندسی علوم دامی' && $branch != 'مهندسی صنایع غذایی' && $branch != 'مهندسی عمران'){
             $internshipNumber = null;
         }
-        $studentQuery = "INSERT INTO studentTable(Fname,Lname,studentId,birthYear,city,email,yearOfUni,tel,idNumber,grade,yearOfInternship,branchName,internName,professorName) 
-        VALUES('$fName','$lName','$stuId','$birth','$city','$email','$yearOfUni','$stuTel','$nationalId','$sqlGrade','$yearOfInternship','$branch','$comName','$professor')";
+        $studentQuery = "INSERT INTO studentTable(Fname,Lname,studentId,email,yearOfUni,tel,idNumber,grade,yearOfInternship,branchName,internName,professorName) 
+        VALUES('$fName','$lName','$stuId','$email','$yearOfUni','$stuTel','$nationalId','$sqlGrade','$yearOfInternship','$branch','$comName','$professor')";
         $professorQuery = "INSERT INTO professorTable(professorName) VALUES('$professor')";
         $internshipQuery = "INSERT INTO internship_table(internName,internPlace,internTel,internType,Address,management) 
         VALUES('$comName','$companyType','$companyTel','$internType','$Address','$management')";
