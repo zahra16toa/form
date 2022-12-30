@@ -115,14 +115,14 @@ require_once 'query/connection.php';
                 <input type="email" tabIndex="6" onkeypress="return validateEmail();" class="text-input min-input" name="email" id="email" required>
                 <label class="input-label" for="">ایمیل</label>
             </div>
-            <div class="input-box">
+            <!-- <div class="input-box">
                 <input type="text" tabIndex="5" onkeypress="return isLetter(event);" class="text-input min-input" name="city" id="" required>
                 <label class="input-label" for="">صادره از</label>
             </div>
             <div class="input-box">
                 <input type="text" maxlength="4" tabIndex="4" onkeypress="return isNumber(event);" class="text-input min-input" name="birth" id="" required>
                 <label class="input-label" for="">متولد</label>
-            </div>
+            </div> -->
     </span>
     <span class="input-form">
         <div class="input-box">
