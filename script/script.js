@@ -128,6 +128,16 @@ function printmsg() {
 /* end captcha functions */
 
 
+function isPersian(evt){
+    let charCode = (evt.which) ? evt.which : event.keyCode;
+    if( charCode > 31 && (charCode < 31 || charCode > 128 ) || charCode == 32 ){
+        alert("لطفا حروف انگلیسی وارد کنید");
+        return false;
+    }
+    return true;
+
+}
+
 function isNumber(evt) {
     let charCode = (evt.which) ? evt.which : event.keyCode;
     if (charCode > 31 && (charCode < 48 || charCode > 57 ) ){
