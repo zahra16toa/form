@@ -23,8 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   $fName = test_input($_POST["fName"]);
   $lName = test_input($_POST["lName"]);
   $stuId = test_input($_POST["studentId"]);
-  $birth = test_input($_POST["birth"]);
-  $city = test_input($_POST["city"]);
+//   $birth = test_input($_POST["birth"]);
+//   $city = test_input($_POST["city"]);
   $email = test_input($_POST["email"]);
   $yearOfUni = test_input($_POST["yearOfUni"]);
   $stuTel = test_input($_POST["studentTel"]);
