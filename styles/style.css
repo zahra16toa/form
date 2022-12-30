@@ -67,6 +67,10 @@ button{
     margin: -9% 10%;
     color: var(--blue);
 }
+div > p{
+    text-align: justify;
+    padding: 0 15px;
+}
 @media print {
     button{ display: none; }
 }
