@@ -123,7 +123,7 @@ $showCount = createNumber($_SESSION["count"]);
         <h5>موضوع: کارآموزی</h5>
         <h5>سلام علیکم</h5> <br> <br>
         <div>
-            بدینوسیله <strong><?php echo($name); ?></strong> دانشجوی <strong id="stuGrade"><?php 
+            <p>بدینوسیله <strong><?php echo($name); ?></strong> دانشجوی <strong id="stuGrade"><?php 
             if($branch == 'حسابداری'){
                 $sqlGrade = $grade2;
                 echo($sqlGrade);
@@ -147,7 +147,7 @@ $showCount = createNumber($_SESSION["count"]);
             }
             ?> </strong>
              رشته <strong><?php echo($branch); ?></strong> به شماره دانشجویی <strong><?php echo(fa_number($stuId)); ?></strong>
-            را جهت گذراندن یک دوره کارآموزی به مدت  ساعت معرفی می نمائید.
+            را جهت گذراندن یک دوره کارآموزی به مدت  ساعت معرفی می نمائید.</p>
                 <p>ضمنا استاد کارآموزی ایشان دکتر <strong><?php echo($professor); ?></strong> می باشد. 
                 خوهشمند است دستور فرمائید ضمن اقدامات لازم به منظور شروع کارآموزی نام برده نسبت به تعیین سرپرست کارآموزی اقدام مقتضی
             صورت گیرد.</p>
