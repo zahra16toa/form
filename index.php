@@ -112,7 +112,7 @@ require_once 'query/connection.php';
                 <label class="input-label" for="">ورودی</label>
             </div>
             <div class="input-box">
-                <input type="email" tabIndex="6" onkeypress="return validateEmail();" class="text-input min-input" name="email" id="email" required>
+                <input type="email" tabIndex="6" onkeypress="return validateEmail(event);" class="text-input min-input" name="email" id="email" required>
                 <label class="input-label" for="">ایمیل</label>
             </div>
             <!-- <div class="input-box">
