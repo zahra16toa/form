@@ -126,7 +126,7 @@ require_once 'query/connection.php';
     </span>
     <span class="input-form">
         <div class="input-box">
-            <input type="text" maxlength="10" tabIndex="9" onkeypress="return isNumber(event);" style="width: 99.5%" class="text-input min-input" name="nationalId" id="" required>
+            <input type="text" maxlength="10" tabIndex="9" onkeypress="return isNumber(event);" style="width: 99.5%" class="text-input min-input" name="nationalId" id="nationalId" required>
             <label class="input-label" for="">کدملی</label>
         </div>
         <div class="input-box">
