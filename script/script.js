@@ -128,16 +128,6 @@ function printmsg() {
 /* end captcha functions */
 
 
-function isPersian(evt){
-    let charCode = (evt.which) ? evt.which : event.keyCode;
-    if( charCode > 31 && (charCode < 31 || charCode > 128 ) || charCode == 32 ){
-        alert("لطفا حروف انگلیسی وارد کنید");
-        emailInput.value = null;
-        return false;
-    }
-    return true;
-
-}
 
 function isNumber(evt) {
     let charCode = (evt.which) ? evt.which : event.keyCode;
@@ -161,16 +151,21 @@ function isLetter(evt) {
     
 }
 
-function validateEmail() {
+function validateEmail(event) {
+    let charCode = (event.which) ? event.which : event.keyCode;
     let mailFormat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if(emailInput.value.match(mailFormat)){
         emailInput.classList.add("valid");
         emailInput.classList.remove("invalid");
         return true;
+    } else if( charCode > 31 && (charCode < 31 || charCode > 128 ) || charCode == 32  ){
+        alert("لطفا حروف انگلیسی وارد کنید.");
+        emailInput.classList.add("invalid");
+        emailInput.classList.remove("valid");
+        return false;
     } else {
         emailInput.classList.add("invalid");
         emailInput.classList.remove("valid");
-        // return false;
     }
 }
 
@@ -550,9 +545,9 @@ function stylingTextBox(){
 }
 /* eventListeners */
 reshteSelect.addEventListener("change",conditions)
-emailInput.addEventListener("keypress",(event)=>{
-        isPersian(event);
-})
+// emailInput.addEventListener("keypress",(event)=>{
+//         isPersian(event);
+// })
 kardani.addEventListener("click", ()=>{
      
     /* برق */
