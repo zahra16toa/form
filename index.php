@@ -209,7 +209,7 @@ require_once 'query/connection.php';
     </div>
     <span class="input-form">
         <div class="input-box">
-            <input type="text" tabIndex="14" class="text-input" maxlength="8" onkeypress="return isNumber(event);" name="companyTel" id="" required >
+            <input type="text" tabIndex="14" class="text-input" maxlength="8" onkeypress="return isNumber(event);" name="companyTel" id="companyTel" required >
             <label class="input-label tel" for="">تلفن محل کارآموزی</label>
         </div>
          <div class="input-box">

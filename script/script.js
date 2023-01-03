@@ -35,6 +35,8 @@ const captchaInput = document.querySelector("#submit");
 const emailInput = document.querySelector("#email");
 /* national id */
 const nationalId = document.querySelector("#nationalId");
+/* company tel */
+const companyTel = document.querySelector("#companyTel")
 /* form variables */
 const company = document.querySelector("#company")
 /* objects */
