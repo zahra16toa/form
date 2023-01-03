@@ -80,7 +80,7 @@ const nums1 = [{text: "1", value: "1"},
 function fillSelect(){
     reshteha.forEach(option =>
         reshte.add(
-            new Option(option.text, option.value, option.selected)
+            new Option(option.text, option.value)
         )
     );
 }
@@ -383,6 +383,12 @@ function validationAllFields(){
         alert("لطفا یک شماره دانشجویی معتبر وارد کنید.")
         sudentId.value = "";
         sudentId.focus();
+        formTag.action = 'index.php'
+        return false;
+    } else if(reshteSelect.value == ""){
+        console.log(false);
+        alert("لطفا یک رشته از لیست انتخاب کنید.")
+        reshteSelect.focus();
         formTag.action = 'index.php'
         return false;
     }
@@ -867,7 +873,7 @@ generateFormButton.addEventListener("click",()=>{
 })
 /* main */
 fillSelect();
-
+reshteSelect.value = "";
 
 
 // sudentId.attributes.add("onkeypress","return inNumberKey(event)");
