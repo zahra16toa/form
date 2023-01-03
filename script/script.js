@@ -129,27 +129,7 @@ function printmsg() {
 
 /* end captcha functions */
 
-function validateId(id){
-   var str = id.toString();
 
-   let strLen = str.length , strVal = parseInt(str);
-   if(strLen < 8 || strLen > 10 || strVal == 0){
-       id.classList.add("invalid");
-       id.classList.remove("valid")
-       return false;
-   } 
-   while(strLen < 10) str + '0' + str;
-   var check = parseInt(str.slice(-1)), str = str.slice(0, -1);
-   for ( var sum = 0, i = str.length; i > 0; i--){
-       sum += (i+1) * str.substr(-i , 1);
-   }
-   var mod = sum % 11;
-   if ((mod < 2 && mod === check ) || (mod >= 2 && mod + check === 10)){
-       id.classList.add("valid");
-       id.classList.remove("invalid");
-       return true;
-   }
-}
 function isNationalIdValid() {
     let nationalCode = nationalId.value;
   // STEP 0: Validate national Id
@@ -226,7 +206,9 @@ function isNationalIdValid() {
   }
 }
 
+function internshipTelValid(){
 
+}
 
 function isNumber(evt) {
     let charCode = (evt.which) ? evt.which : event.keyCode;
