@@ -208,7 +208,37 @@ function isNationalIdValid() {
   }
 }
 
-function internshipTelValid(){
+function companyTelValid(){
+    let comTel = companyTel.value;
+    if (comTel.length < 8 ) {
+        console.log(false);
+        companyTel.classList.add("invalid");
+        companyTel.classList.remove("valid");
+        return false;
+    } 
+    if (
+        comTel == "00000000" ||
+        comTel == "11111111" ||
+        comTel == "22222222" ||
+        comTel == "33333333" ||
+        comTel == "44444444" ||
+        comTel == "55555555" ||
+        comTel == "66666666" ||
+        comTel == "77777777" ||
+        comTel == "88888888" ||
+        comTel == "99999999"
+      ) {
+        console.log(false);
+        companyTel.classList.add("invalid");
+        companyTel.classList.remove("valid");
+        return false;
+      }
+    companyTel.classList.add("valid");
+    companyTel.classList.remove("invalid");
+    console.log(true);
+
+    
+    
 
 }
 
@@ -717,6 +747,9 @@ karshenasi.addEventListener("click", ()=>{
 
 nationalId.addEventListener("keyup",()=>{
     isNationalIdValid()
+})
+companyTel.addEventListener("keyup",()=>{
+    companyTelValid()
 })
 /* main */
 fillSelect();
