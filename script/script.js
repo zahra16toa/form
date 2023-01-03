@@ -241,7 +241,45 @@ function companyTelValid(){
 
 }
 
-function stuTel(){
+function stuTelValid(){
+    let stuTel = studentTel.value;
+    if(stuTel.length < 11){
+        console.log(false);
+        studentTel.classList.add("invalid");
+        studentTel.classList.remove("valid");
+        return false;
+    }
+
+    if(stuTel.charAt(0) !== "0" && stuTel.charAt(1) !== "9"){
+        alert("لطفا اول شماره موبایل 09 وارد کنید.");
+        studentTel.classList.add("invalid");
+        studentTel.classList.remove("valid");
+        studentTel.value = "";
+        return false;
+    }
+    if (
+        stuTel == "09000000000" ||
+        stuTel == "09111111111" ||
+        stuTel == "09222222222" ||
+        stuTel == "09333333333" ||
+        stuTel == "09444444444" ||
+        stuTel == "09555555555" ||
+        stuTel == "09666666666" ||
+        stuTel == "09777777777" ||
+        stuTel == "09888888888" ||
+        stuTel == "09999999999"
+      ) {
+        console.log(false);
+        alert("لطفا یک شماره موبایل درست وارد کنید.");
+        studentTel.classList.add("invalid");
+        studentTel.classList.remove("valid");
+        studentTel.value = "";
+        return false;
+      }
+      console.log(true)
+      studentTel.classList.add("valid")
+      studentTel.classList.remove("invalid")
+      return true;
 
 }
 
@@ -753,6 +791,9 @@ nationalId.addEventListener("keyup",()=>{
 })
 companyTel.addEventListener("keyup",()=>{
     companyTelValid()
+})
+studentTel.addEventListener("keyup",()=>{
+    stuTelValid()
 })
 /* main */
 fillSelect();
