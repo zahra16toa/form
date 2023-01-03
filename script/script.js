@@ -157,6 +157,8 @@ function isNationalIdValid() {
   // Check length is 10
   if (nationalCode.length < 8 || 10 < nationalCode.length) {
     console.log(false);
+    nationalId.classList.add("invalid");
+    nationalId.classList.remove("valid");
     return false;
   }
 
@@ -174,6 +176,8 @@ function isNationalIdValid() {
     nationalCode == "9999999999"
   ) {
     console.log(false);
+    nationalId.classList.add("invalid");
+    nationalId.classList.remove("valid");
     return false;
   }
 
@@ -221,6 +225,8 @@ function isNationalIdValid() {
     return false;
   }
 }
+
+
 
 function isNumber(evt) {
     let charCode = (evt.which) ? evt.which : event.keyCode;
