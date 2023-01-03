@@ -35,6 +35,8 @@ const captchaInput = document.querySelector("#submit");
 const emailInput = document.querySelector("#email");
 /* national id */
 const nationalId = document.querySelector("#nationalId");
+/* form tag */
+const formTag = document.querySelector("form");
 /* company tel */
 const companyTel = document.querySelector("#companyTel")
 /* studentTel */
@@ -282,7 +284,38 @@ function stuTelValid(){
       return true;
 
 }
-
+function sudentIdValid(){
+    let stuId = sudentId.value;
+    if(stuId.length < 9){
+        console.log(false);
+        sudentId.classList.add("invalid");
+        sudentId.classList.remove("valid");
+        return false;
+    }
+    if (
+        stuTel == "000000000" ||
+        stuTel == "111111111" ||
+        stuTel == "222222222" ||
+        stuTel == "333333333" ||
+        stuTel == "444444444" ||
+        stuTel == "555555555" ||
+        stuTel == "666666666" ||
+        stuTel == "777777777" ||
+        stuTel == "888888888" ||
+        stuTel == "999999999"
+      ) {
+        console.log(false);
+        alert("لطفا یک شماره موبایل درست وارد کنید.");
+        sudentId.classList.add("invalid");
+        sudentId.classList.remove("valid");
+        sudentId.value = "";
+        return false;
+      }
+      console.log(true)
+      sudentId.classList.add("valid")
+      sudentId.classList.remove("invalid")
+      return true;
+}
 function isNumber(evt) {
     let charCode = (evt.which) ? evt.which : event.keyCode;
     if (charCode > 31 && (charCode < 48 || charCode > 57 ) ){
@@ -323,7 +356,32 @@ function validateEmail(event) {
         emailInput.classList.remove("valid");
     }
 }
+function validationAllFields(){
+    if(nationalId.classList.contains("invalid")){
+        console.log(false);
+        alert("لطفا یک کدملی معتبر وارد کنید.")
+        nationalId.value = "";
+        nationalId.focus();
+        formTag.action = 'index.php'
+        return false;
+    } else if(studentTel.classList.contains("invalid")){
+        console.log(false);
+        alert("لطفا شماره موبایل معتبر وارد کنید.")
+        studentTel.value = "";
+        studentTel.focus();
+        formTag.action = 'index.php'
+        return false;
+    } else if(companyTel.classList.contains("invalid")){
+        console.log(false);
+        alert("لطفا یک تلفن محل کارآموزی معتبر وارد کنید.")
+        companyTel.value = "";
+        companyTel.focus();
+        formTag.action = 'index.php'
+        return false;
+    }
+    formTag.action = 'form.php'
 
+}
 
 function conditions(){
     /* کارشناسی ناپیوسته  */
@@ -794,6 +852,9 @@ companyTel.addEventListener("keyup",()=>{
 })
 studentTel.addEventListener("keyup",()=>{
     stuTelValid()
+})
+generateFormButton.addEventListener("click",()=>{
+    validationAllFields()
 })
 /* main */
 fillSelect();
