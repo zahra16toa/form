@@ -33,6 +33,8 @@ const captchaImage = document.querySelector("#image");
 const captchaInput = document.querySelector("#submit");
 /* email selector */
 const emailInput = document.querySelector("#email");
+/* national id */
+const nationalId = document.querySelector("#nationalId");
 /* form variables */
 const company = document.querySelector("#company")
 /* objects */
@@ -127,12 +129,104 @@ function printmsg() {
 
 /* end captcha functions */
 
+function validateId(id){
+   var str = id.toString();
 
+   let strLen = str.length , strVal = parseInt(str);
+   if(strLen < 8 || strLen > 10 || strVal == 0){
+       id.classList.add("invalid");
+       id.classList.remove("valid")
+       return false;
+   } 
+   while(strLen < 10) str + '0' + str;
+   var check = parseInt(str.slice(-1)), str = str.slice(0, -1);
+   for ( var sum = 0, i = str.length; i > 0; i--){
+       sum += (i+1) * str.substr(-i , 1);
+   }
+   var mod = sum % 11;
+   if ((mod < 2 && mod === check ) || (mod >= 2 && mod + check === 10)){
+       id.classList.add("valid");
+       id.classList.remove("invalid");
+       return true;
+   }
+}
+function isNationalIdValid() {
+    let nationalCode = nationalId.value;
+  // STEP 0: Validate national Id
+
+  // Check length is 10
+  if (nationalCode.length < 8 || 10 < nationalCode.length) {
+    console.log(false);
+    return false;
+  }
+
+  // Check if all of the numbers are the same
+  if (
+    nationalCode == "0000000000" ||
+    nationalCode == "1111111111" ||
+    nationalCode == "2222222222" ||
+    nationalCode == "3333333333" ||
+    nationalCode == "4444444444" ||
+    nationalCode == "5555555555" ||
+    nationalCode == "6666666666" ||
+    nationalCode == "7777777777" ||
+    nationalCode == "8888888888" ||
+    nationalCode == "9999999999"
+  ) {
+    console.log(false);
+    return false;
+  }
+
+  // STEP 00 : if nationalCode.lenght==8 add two zero on the left
+  if (nationalCode.length < 10) {
+    let zeroNeeded = 10 - nationalCode.length;
+
+    let zeroString = "";
+    if (zeroNeeded == 2) {
+      zeroString = "00";
+    } else {
+      zeroString = "0";
+    }
+
+    nationalCode = zeroString.concat(nationalCode);
+  }
+
+  // STEP 1: Sum all numbers
+  let sum = 0;
+  for (let i = 0; i < 9; i++) {
+    sum += nationalCode.charAt(i) * (10 - i);
+  }
+
+  // STEP 2: MOD ON 11
+  let mod = sum % 11;
+
+  // STEP 3: Check with 2
+  let finalValue;
+  if (mod >= 2) {
+    finalValue = 11 - mod;
+  } else {
+    finalValue = mod;
+  }
+
+  // STEP 4: Final Step check with control value
+  if (finalValue == nationalCode.charAt(9)) {
+    console.log(true);
+    nationalId.classList.add("valid");
+    nationalId.classList.remove("invalid");
+    return true;
+  } else {
+    console.log(false);
+    nationalId.classList.remove("valid");
+    nationalId.classList.add("invalid");
+    return false;
+  }
+}
 
 function isNumber(evt) {
     let charCode = (evt.which) ? evt.which : event.keyCode;
     if (charCode > 31 && (charCode < 48 || charCode > 57 ) ){
         alert("لطفا عدد وارد کنید");
+        nationalId.classList.add("invalid");
         return false;
     }
     return true;
@@ -548,6 +642,9 @@ reshteSelect.addEventListener("change",conditions)
 // emailInput.addEventListener("keypress",(event)=>{
 //         isPersian(event);
 // })
+// nationalId.addEventListener("keyup",(e)=>{
+//     validateId(e);
+// })
 kardani.addEventListener("click", ()=>{
      
     /* برق */
@@ -627,6 +724,10 @@ karshenasi.addEventListener("click", ()=>{
 //         element.classList.remove("label");
 //     });
 // });
+
+nationalId.addEventListener("keyup",()=>{
+    isNationalIdValid()
+})
 /* main */
 fillSelect();
 
