@@ -293,16 +293,16 @@ function sudentIdValid(){
         return false;
     }
     if (
-        stuTel == "000000000" ||
-        stuTel == "111111111" ||
-        stuTel == "222222222" ||
-        stuTel == "333333333" ||
-        stuTel == "444444444" ||
-        stuTel == "555555555" ||
-        stuTel == "666666666" ||
-        stuTel == "777777777" ||
-        stuTel == "888888888" ||
-        stuTel == "999999999"
+        stuId == "000000000" ||
+        stuId == "111111111" ||
+        stuId == "222222222" ||
+        stuId == "333333333" ||
+        stuId == "444444444" ||
+        stuId == "555555555" ||
+        stuId == "666666666" ||
+        stuId == "777777777" ||
+        stuId == "888888888" ||
+        stuId == "999999999"
       ) {
         console.log(false);
         alert("لطفا یک شماره موبایل درست وارد کنید.");
@@ -376,6 +376,13 @@ function validationAllFields(){
         alert("لطفا یک تلفن محل کارآموزی معتبر وارد کنید.")
         companyTel.value = "";
         companyTel.focus();
+        formTag.action = 'index.php'
+        return false;
+    } else if(sudentId.classList.contains("invalid")){
+        console.log(false);
+        alert("لطفا یک شماره دانشجویی معتبر وارد کنید.")
+        sudentId.value = "";
+        sudentId.focus();
         formTag.action = 'index.php'
         return false;
     }
