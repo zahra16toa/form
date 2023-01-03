@@ -130,7 +130,7 @@ require_once 'query/connection.php';
             <label class="input-label" for="">کدملی</label>
         </div>
         <div class="input-box">
-            <input type="text" class="text-input min-input" tabIndex="8" maxlength="11" onkeypress="return isNumber(event);" name="studentTel" id="" required >
+            <input type="text" class="text-input min-input" tabIndex="8" maxlength="11" onkeypress="return isNumber(event);" name="studentTel" id="studentTel" required >
             <label class="input-label tel" for="">موبایل</label>
         </div>
     </span>

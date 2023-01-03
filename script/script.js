@@ -37,6 +37,8 @@ const emailInput = document.querySelector("#email");
 const nationalId = document.querySelector("#nationalId");
 /* company tel */
 const companyTel = document.querySelector("#companyTel")
+/* studentTel */
+const studentTel = document.querySelector("#studentTel");
 /* form variables */
 const company = document.querySelector("#company")
 /* objects */
@@ -237,8 +239,9 @@ function companyTelValid(){
     companyTel.classList.remove("invalid");
     console.log(true);
 
-    
-    
+}
+
+function stuTel(){
 
 }
 
