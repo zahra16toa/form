@@ -843,7 +843,9 @@ karshenasi.addEventListener("click", ()=>{
 //         element.classList.remove("label");
 //     });
 // });
-
+sudentId.addEventListener("keyup", ()=>{
+    sudentIdValid()
+})
 nationalId.addEventListener("keyup",()=>{
     isNationalIdValid()
 })
