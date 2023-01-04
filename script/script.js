@@ -286,7 +286,7 @@ function stuTelValid(){
 }
 function sudentIdValid(){
     let stuId = sudentId.value;
-    if(stuId.length < 9 || stuId.length < 14){
+    if(stuId.length != 9 && stuId.length < 14){
         console.log(false);
         sudentId.classList.add("invalid");
         sudentId.classList.remove("valid");
