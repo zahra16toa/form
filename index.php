@@ -24,7 +24,7 @@ require_once 'query/connection.php';
             <label class="input-label" for="l-name">نام خانوادگی</label>
         </div>
         <div class="input-box">
-            <input type="text" tabIndex="3" onkeypress="return isNumber(event);" name="studentId" maxlength="9" class="text-input" id="studentId" required>
+            <input type="text" tabIndex="3" onkeypress="return isNumber(event);" name="studentId" maxlength="14" class="text-input" id="studentId" required>
             <label class="input-label"  for="student-id">شماره دانشجویی</label>
         </div>
         <div class="select-group">
