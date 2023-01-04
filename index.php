@@ -108,8 +108,8 @@ require_once 'query/connection.php';
         
     <span class="input-form">
             <div class="input-box">
-                <input type="text" tabIndex="7" maxlength="4" onkeypress="return isNumber(event);" class="text-input min-input" name="yearOfUni" id="" required>
-                <label class="input-label" for="">ورودی</label>
+                <input type="text" tabIndex="7" maxlength="4" onkeypress="return isNumber(event);" class="text-input min-input" name="yearOfUni" id="yearOfUni" required>
+                <label class="input-label" for="">سال ورودی</label>
             </div>
             <div class="input-box">
                 <input type="email" tabIndex="6" onkeypress="return validateEmail(event);" class="text-input min-input" name="email" id="email" required>
