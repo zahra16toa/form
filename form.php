@@ -109,7 +109,7 @@ $showCount = createNumber($_SESSION["count"]);
             ?></p>
         </div>
         <div class="logo">
-            <img src="img/download1.png" width="45px" alt="">
+            <img src="img/download1.png" width="55px" alt="">
         </div>
         <div class="text">
             <h5>باسمه تعالی</h5>
