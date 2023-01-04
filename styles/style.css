@@ -1,22 +1,27 @@
 @import url('../style.css');
+/* fonts */
+@font-face {
+    font-family: "nazanin";
+    src: url("../font/B-NAZANIN.TTF") format("ttf");
+    font-weight: normal;
+    font-style: normal;
+  }
 *{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "nazanin" !important;
+    /* font-weight: 600; */
 }
 /* variables */
-/* fonts */
-@font-face {
-  font-family: "Vazir";
-  src: url("../font/Vazir.eot?#") format("eot"), url("../font/Vazir.woff") format("woff"), url("../font/Vazir.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
+
 body{
-    padding: 50px 7%;
-    font-family: "Vazir";
+    padding: 45px 6%;
     direction: rtl;
     background: none;
+}
+p{
+    font-size: 15pt;
 }
 .head{
     padding: 20px;
@@ -51,7 +56,7 @@ strong{
     font-size: 9pt;
 }
 .body h5{
-    padding: 8px 0;
+    padding: 8px 15px;
 }
 input{
     width: 100px;
@@ -69,7 +74,7 @@ button{
     color: var(--blue);
 }
 div > p{
-    line-height: 38px;
+    line-height: 40px;
     text-align: justify;
     padding: 0 15px;
 }
