@@ -219,7 +219,7 @@ require_once 'query/connection.php';
     </span>
     <span class="input-form">
         <div class="input-box">
-            <input type="text" tabIndex="15" class="text-input" onkeypress="return isLetter(event);" style="height: 40px" name="address" id="" required>
+            <input type="text" tabIndex="15" class="text-input" style="height: 40px" name="address" id="" required>
             <label class="input-label" for="">نشانی</label>
         </div>
     </span>
