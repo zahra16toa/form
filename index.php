@@ -137,8 +137,16 @@ require_once 'query/connection.php';
     <span class="input-form">
         <div class="input-box">
             <label class="input-label" id="year" for="">نیمسال اخذ کارآموزی</label>
-            <select class="term" tabIndex="11" name="yearOfInternship" id=""><option text="بهمن 4002" value="بهمن 4002">بهمن 4002</option>
-                <option text="تابستان 4002" value="تابستان 4002">تابستان 4003</option></select>
+            <select class="term" tabIndex="11" name="yearOfInternship" id=""><option text="مهر 1399 - 3991" value="مهر 1399 - 3991">مهر 1399 - 3991</option>
+                <option text="بهمن 1399 - 3992" value="بهمن 1399 - 3992">بهمن 1399 - 3992</option>
+                <option text="تابستان 1400 - 3993" value="تابستان 1400 - 3993">تابستان 1400 - 3993</option>
+                <option text="مهر 1400 - 4001" value="مهر 1400 - 4001">مهر 1400 - 4001</option>
+                <option text="بهمن 1400 - 4002" value="بهمن 1400 - 4002">بهمن 1400 - 4002</option>
+                <option text="تابستان 1401 - 4003" value="تابستان 1401 - 4003">تابستان 1401 - 4003</option>
+                <option text="مهر 1401 - 4011" value="مهر 1401 - 4011">مهر 1401 - 4011</option>
+                <option text="بهمن 1401 - 4012" value="بهمن 1401 - 4012">بهمن 1401 - 4012</option>
+                <option text="تابستان 1402 - 4013" value="تابستان 1402 - 4013">تابستان 1402 - 4013</option>
+            </select>
         </div>
         <div class="input-box">
             <input type="text" tabIndex="10" onkeypress="return isLetter(event);" class="text-input min-input" name="professorName" id="" required>
