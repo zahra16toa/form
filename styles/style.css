@@ -43,8 +43,9 @@ body{
 strong{
     margin: 0 10px;
 }
-.head p{
-    font-size: 10pt;
+.date p{
+    line-height: 20px;
+    font-size: 8pt;
 }
 .head .date{
     font-size: 9pt;
@@ -68,6 +69,7 @@ button{
     color: var(--blue);
 }
 div > p{
+    line-height: 38px;
     text-align: justify;
     padding: 0 15px;
 }
