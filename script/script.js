@@ -43,6 +43,8 @@ const companyTel = document.querySelector("#companyTel")
 const studentTel = document.querySelector("#studentTel");
 /* form variables */
 const company = document.querySelector("#company")
+/* سال ورودی */
+const yearOfUni = document.querySelector("#yearOfUni")
 /* objects */
 const reshteha = [
     {index: 0, text: "مهندسی تکنولوژی نرم افزار", value: "مهندسی تکنولوژی نرم افزار", hour: "360"},
@@ -135,6 +137,44 @@ function printmsg() {
 
 /* end captcha functions */
 
+function yearOfUniValid(){
+    let yearOfUniValue = yearOfUni.value;
+
+    if(yearOfUniValue.length < 4){
+        yearOfUni.classList.add("invalid")
+        yearOfUni.classList.remove("valid")
+        return false;
+    }
+    if(
+        yearOfUniValue == 0000 ||
+        yearOfUniValue == 1111 || 
+        yearOfUniValue == 2222 ||
+        yearOfUniValue == 3333 ||
+        yearOfUniValue == 4444 ||
+        yearOfUniValue == 5555 ||
+        yearOfUniValue == 6666 ||
+        yearOfUniValue == 7777 || 
+        yearOfUniValue == 8888 || 
+        yearOfUniValue == 9999
+        ) {
+            yearOfUni.classList.add("invalid")
+            yearOfUni.classList.remove("valid")
+            return false;
+        }
+    if(yearOfUniValue < 1395){
+        alert("سال ورودی فقط از سال 1395 به بعد وارد شود")
+        yearOfUni.value = "";
+        yearOfUni.focus();
+        yearOfUni.classList.add("invalid")
+        yearOfUni.classList.remove("valid")
+        return false;
+    }
+
+    yearOfUni.classList.add("valid")
+    yearOfUni.classList.remove("invalid")
+
+    return true;
+}
 
 function isNationalIdValid() {
     let nationalCode = nationalId.value;
@@ -389,6 +429,12 @@ function validationAllFields(){
         console.log(false);
         alert("لطفا یک رشته از لیست انتخاب کنید.")
         reshteSelect.focus();
+        formTag.action = 'index.php'
+        return false;
+    } else if(yearOfUni.classList.contains("invalid")){
+        alert("لطفا سال ورودی معتبر وارد کنید.")
+        yearOfUni.focus();
+        yearOfUni.value = "";
         formTag.action = 'index.php'
         return false;
     }
@@ -876,6 +922,9 @@ studentTel.addEventListener("keyup",()=>{
 })
 generateFormButton.addEventListener("click",()=>{
     validationAllFields()
+})
+yearOfUni.addEventListener("keyup",()=>{
+    yearOfUniValid()
 })
 /* main */
 fillSelect();
