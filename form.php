@@ -70,8 +70,8 @@ function test_input($data) {
     $data = htmlspecialchars($data);
     return $data;
 }
-function fa_number($number)
-{
+function fa_number($number) {
+
    if(!is_numeric($number) || empty($number))
    return '۰';
    $en = array("0","1","2","3","4","5","6","7","8","9");
@@ -147,7 +147,7 @@ $showCount = createNumber($_SESSION["count"]);
             }
             ?> </strong>
              رشته <strong><?php echo($branch); ?></strong> به شماره دانشجویی <strong><?php echo(fa_number($stuId)); ?></strong>
-            را جهت گذراندن یک دوره کارآموزی به مدت  ساعت معرفی می نمائید.</p>
+            را جهت گذراندن یک دوره کارآموزی به مدت  <strong><?php echo(fa_number($hourCount)); ?></strong>ساعت معرفی می نمائید.</p>
                 <p>ضمنا استاد کارآموزی ایشان دکتر <strong><?php echo($professor); ?></strong> می باشد. 
                 خوهشمند است دستور فرمائید ضمن اقدامات لازم به منظور شروع کارآموزی نام برده نسبت به تعیین سرپرست کارآموزی اقدام مقتضی
             صورت گیرد.</p>
