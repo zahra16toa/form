@@ -345,7 +345,7 @@ function sudentIdValid(){
         stuId == "999999999"
       ) {
         console.log(false);
-        alert("لطفا یک شماره موبایل درست وارد کنید.");
+        alert("لطفا یک شماره دانشجویی معتبر وارد کنید.");
         sudentId.classList.add("invalid");
         sudentId.classList.remove("valid");
         sudentId.value = "";
